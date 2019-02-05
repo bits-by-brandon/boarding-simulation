@@ -1,0 +1,1 @@
+{"version":3,"file":"PassengerFactory.js","sourceRoot":"","sources":["../../src/Models/PassengerFactory.ts"],"names":[],"mappings":";;AAAA,2CAAoC;AAEpC,MAAM,gBAAgB;IAGlB,cAAc;QACV,OAAO,IAAI,mBAAS,CAAC,IAAI,CAAC,OAAO,EAAE,CAAC,CAAC;IACzC,CAAC;IAED;QACI,IAAI,CAAC,OAAO,GAAG,CAAC,CAAC;IACrB,CAAC;CACJ;AAED,kBAAe,gBAAgB,CAAC"}
