@@ -2,11 +2,11 @@ import Plane from "./Plane";
 import Seat from "./Seat";
 
 class Passenger {
-    get currentPosition(): number {
+    get currentPosition(): number|Seat|null {
         return this._currentPosition;
     }
 
-    set currentPosition(value: number) {
+    set currentPosition(value: number|Seat|null) {
         this._currentPosition = value;
     }
 
