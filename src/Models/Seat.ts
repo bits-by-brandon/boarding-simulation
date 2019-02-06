@@ -7,7 +7,11 @@ class Seat {
 
     set assignedPassenger(value: Passenger | null) {
         this._assignedPassenger = value;
+        if (this._assignedPassenger.assignedSeat !== this) {
+            this._assignedPassenger.assignedSeat = this
+        }
     }
+
     get occupied(): Passenger | null {
         return this._occupied;
     }
@@ -42,6 +46,13 @@ class Seat {
 
     private _occupied: Passenger | null;
 
+    /**
+     * @param row
+     * @param column
+     * @param boardingGroup
+     * @param assignedPassenger
+     * @param occupied
+     */
     constructor(row: number, column: number, boardingGroup: number, assignedPassenger: Passenger | null = null, occupied: Passenger | null = null) {
         this._row = row;
         this._column = column;

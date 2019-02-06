@@ -1,11 +1,14 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 class Passenger {
-    get currentPosition() {
-        return this._currentPosition;
+    get assignedSeat() {
+        return this._assignedSeat;
     }
-    set currentPosition(value) {
-        this._currentPosition = value;
+    set assignedSeat(value) {
+        this._assignedSeat = value;
+        if (this._assignedSeat.assignedPassenger !== this) {
+            this._assignedSeat.assignedPassenger = this;
+        }
     }
     constructor(assignedSeat, baggageCount = 1, currentPosition = null) {
         this._assignedSeat = assignedSeat;

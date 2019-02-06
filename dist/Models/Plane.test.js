@@ -10,4 +10,10 @@ it('assigns seat boarding groups', () => {
     const firstBoardingGroupSeats = plane.getBoardingGroup(0);
     expect(firstBoardingGroupSeats.length).toEqual(20);
 });
+it('gets the correct seat', () => {
+    const plane = new Plane_1.default(10, 2, 2);
+    const expectedSeat = plane.getSeat(5, 3);
+    expect(expectedSeat.row).toEqual(5);
+    expect(expectedSeat.column).toEqual(3);
+});
 //# sourceMappingURL=Plane.test.js.map

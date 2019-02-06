@@ -6,6 +6,9 @@ class Seat {
     }
     set assignedPassenger(value) {
         this._assignedPassenger = value;
+        if (this._assignedPassenger.assignedSeat !== this) {
+            this._assignedPassenger.assignedSeat = this;
+        }
     }
     get occupied() {
         return this._occupied;

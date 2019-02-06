@@ -13,3 +13,12 @@ it('assigns seat boarding groups', () => {
 
     expect(firstBoardingGroupSeats.length).toEqual(20);
 });
+
+it('gets the correct seat', () => {
+    const plane = new Plane(10, 2, 2);
+
+    const expectedSeat = plane.getSeat(5, 3);
+
+    expect(expectedSeat.row).toEqual(5);
+    expect(expectedSeat.column).toEqual(3);
+});

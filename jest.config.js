@@ -1,4 +1,12 @@
 module.exports = {
+    "collectCoverage": true,
+    "collectCoverageFrom": [
+        "./src/**/*.{js,jsx,ts}",
+        "!**/node_modules/**",
+        "!**/vendor/**"
+    ],
+    "coverageDirectory": "coverage",
+    "coverageReporters": ["json"],
     "roots": [
         "<rootDir>/src"
     ],

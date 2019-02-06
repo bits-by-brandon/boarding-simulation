@@ -2,20 +2,28 @@ import Plane from "./Plane";
 import Seat from "./Seat";
 
 class Passenger {
-    get currentPosition(): number|Seat|null {
-        return this._currentPosition;
+    get assignedSeat(): Seat {
+        return this._assignedSeat;
     }
 
-    set currentPosition(value: number|Seat|null) {
-        this._currentPosition = value;
+    set assignedSeat(value: Seat) {
+        this._assignedSeat = value;
+        if(this._assignedSeat.assignedPassenger !== this) {
+            this._assignedSeat.assignedPassenger = this;
+        }
     }
 
-    protected _assignedSeat: Seat;
+    private _assignedSeat: Seat;
 
-    private _currentPosition: number|Seat|null;
+    public _currentPosition: number|Seat|null;
 
     private _baggageCount: number;
 
+    /**
+     * @param assignedSeat
+     * @param baggageCount
+     * @param currentPosition
+     */
     constructor(assignedSeat: Seat, baggageCount: number = 1, currentPosition: number|Seat|null = null) {
         this._assignedSeat = assignedSeat;
         this._currentPosition = currentPosition;
