@@ -22,8 +22,6 @@ class PassengerFactory {
         } else {
 
             if (!this._availableSeats.includes(seat)) {
-                console.log(seat);
-                console.log(this._availableSeats);
                 throw 'Pre-assigned seat is not available'
             }
 
