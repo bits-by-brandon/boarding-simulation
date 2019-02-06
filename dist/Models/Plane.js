@@ -32,6 +32,9 @@ class Plane {
     get seats() {
         return this._seats;
     }
+    getLaneRow(row) {
+        return this._lane.getRow(row);
+    }
     getSeat(row, column) {
         return this._seats.find(seat => (seat.row === row && seat.column === column));
     }

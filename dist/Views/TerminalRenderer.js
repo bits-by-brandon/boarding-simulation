@@ -5,6 +5,7 @@ class TerminalRenderer {
         this._plane = plane;
     }
     render() {
+        console.clear();
         let frameLines = [];
         if (true) {
             frameLines.push(TerminalRenderer.renderRowNumbers(this._plane.rows));
@@ -20,7 +21,9 @@ class TerminalRenderer {
             }
             frameLines.push(column);
         }
-        return frameLines.reduce((lines, line) => lines.concat(line + '\n'), '');
+        const frame = frameLines.reduce((lines, line) => lines.concat(line + '\n'), '');
+        console.log(frame);
+        return frame;
     }
     ;
     static renderSeat(seat) {

@@ -1,11 +1,21 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 class Passenger {
-    constructor(id) {
-        this.id = id;
+    get currentPosition() {
+        return this._currentPosition;
     }
-    greet() {
-        return 'Hello, I am person: ' + this.id;
+    set currentPosition(value) {
+        this._currentPosition = value;
+    }
+    constructor(assignedSeat, baggageCount = 1, currentPosition = null) {
+        this._assignedSeat = assignedSeat;
+        this._currentPosition = currentPosition;
+        this._baggageCount = baggageCount;
+    }
+    step(plane) {
+        if (this._assignedSeat === this._currentPosition) {
+            return;
+        }
     }
 }
 exports.default = Passenger;

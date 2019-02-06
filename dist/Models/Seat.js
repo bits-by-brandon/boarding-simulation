@@ -1,6 +1,12 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 class Seat {
+    get assignedPassenger() {
+        return this._assignedPassenger;
+    }
+    set assignedPassenger(value) {
+        this._assignedPassenger = value;
+    }
     get occupied() {
         return this._occupied;
     }
@@ -16,10 +22,14 @@ class Seat {
     occupy(passenger) {
         this._occupied = passenger;
     }
-    constructor(row, column, boardingGroup, occupied = null) {
+    getColumnLetter() {
+        return String.fromCharCode(97 + this._column).toUpperCase();
+    }
+    constructor(row, column, boardingGroup, assignedPassenger = null, occupied = null) {
         this._row = row;
         this._column = column;
         this._boardingGroup = boardingGroup;
+        this._assignedPassenger = assignedPassenger;
         this._occupied = occupied;
     }
 }

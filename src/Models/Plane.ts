@@ -1,5 +1,4 @@
 import Seat from "./Seat";
-import Passenger from "./Passenger";
 import Lane from "./Lane";
 
 class Plane {
@@ -50,11 +49,15 @@ class Plane {
         return this._seats;
     }
 
+    getLaneRow(row: number) {
+        return this._lane.getRow(row);
+    }
+
     getSeat(row: number, column: number) {
         return this._seats.find(seat => (seat.row === row && seat.column === column));
     }
 
-    getBoardingGroup(groupNumber: number) : Seat[] {
+    getBoardingGroup(groupNumber: number): Seat[] {
         return this._seats.filter(seat => seat.boardingGroup === groupNumber)
     }
 

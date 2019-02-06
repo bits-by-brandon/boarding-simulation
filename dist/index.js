@@ -7,13 +7,20 @@ const passengerCount = parseInt(process.argv[2]) || 80;
 const rows = parseInt(process.argv[3]) || 12;
 const columnsPerRow = parseInt(process.argv[4]) || 3;
 const boardingGroups = parseInt(process.argv[5]) || 3;
-const passengerFactory = new PassengerFactory_1.default();
-let passengerQueue = [];
-for (let i = 0; i < passengerCount; i++) {
-    passengerQueue.push(passengerFactory.buildPassenger());
-}
+const fps = parseInt(process.argv[6]) || 1;
 const plane = new Plane_1.default(rows, columnsPerRow, boardingGroups);
+const passengerFactory = new PassengerFactory_1.default(plane.seats.slice());
+const passengerQueue = [];
+try {
+    for (let i = 0; i < passengerCount; i++) {
+        passengerQueue.push(passengerFactory.buildPassenger());
+    }
+}
+catch (e) {
+    console.error(e);
+}
 const renderer = new TerminalRenderer_1.default(plane);
-const output = renderer.render();
-console.log(output);
+setInterval(() => {
+    renderer.render();
+}, fps * 1000);
 //# sourceMappingURL=index.js.map

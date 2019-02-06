@@ -12,6 +12,8 @@ class TerminalRenderer implements IRenderer {
     }
 
     public render(): string {
+        console.clear();
+
         let frameLines = [];
 
         //TODO: Replace with row guide bool
@@ -35,7 +37,9 @@ class TerminalRenderer implements IRenderer {
             frameLines.push(column);
         }
 
-        return frameLines.reduce((lines, line) => lines.concat(line + '\n'), '');
+        const frame = frameLines.reduce((lines, line) => lines.concat(line + '\n'), '');
+        console.log(frame);
+        return frame;
     };
 
     static renderSeat(seat: Seat): string {

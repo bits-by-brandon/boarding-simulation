@@ -1,6 +1,13 @@
 import Passenger from "./Passenger";
 
 class Seat {
+    get assignedPassenger(): Passenger | null {
+        return this._assignedPassenger;
+    }
+
+    set assignedPassenger(value: Passenger | null) {
+        this._assignedPassenger = value;
+    }
     get occupied(): Passenger | null {
         return this._occupied;
     }
@@ -21,18 +28,25 @@ class Seat {
         this._occupied = passenger;
     }
 
+    getColumnLetter(): string {
+        return String.fromCharCode(97 + this._column).toUpperCase();
+    }
+
     private readonly _row: number;
 
     private readonly _column: number;
 
     private readonly _boardingGroup: number;
 
-    private _occupied: Passenger|null;
+    private _assignedPassenger: Passenger | null;
 
-    constructor(row: number, column: number, boardingGroup: number, occupied: Passenger|null = null) {
+    private _occupied: Passenger | null;
+
+    constructor(row: number, column: number, boardingGroup: number, assignedPassenger: Passenger | null = null, occupied: Passenger | null = null) {
         this._row = row;
         this._column = column;
         this._boardingGroup = boardingGroup;
+        this._assignedPassenger = assignedPassenger;
         this._occupied = occupied;
     }
 }

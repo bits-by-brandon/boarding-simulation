@@ -1,12 +1,34 @@
-class Passenger {
-    protected id: number;
+import Plane from "./Plane";
+import Seat from "./Seat";
 
-    constructor(id: number) {
-        this.id = id;
+class Passenger {
+    get currentPosition(): number {
+        return this._currentPosition;
     }
 
-    greet(): string {
-        return 'Hello, I am person: ' + this.id;
+    set currentPosition(value: number) {
+        this._currentPosition = value;
+    }
+
+    protected _assignedSeat: Seat;
+
+    private _currentPosition: number|Seat|null;
+
+    private _baggageCount: number;
+
+    constructor(assignedSeat: Seat, baggageCount: number = 1, currentPosition: number|Seat|null = null) {
+        this._assignedSeat = assignedSeat;
+        this._currentPosition = currentPosition;
+        this._baggageCount = baggageCount;
+    }
+
+    step(plane: Plane) {
+        if(this._assignedSeat === this._currentPosition) {
+            return
+        }
+
+        // Check if in correct row
+        // Check if any baggage needs to be stowed
     }
 }
 
