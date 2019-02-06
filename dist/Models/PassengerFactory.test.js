@@ -16,14 +16,14 @@ it('assigns built Passenger to a seat', () => {
     const passenger = factory.buildPassenger();
     expect(passenger.assignedSeat).toBeInstanceOf(Seat_1.default);
 });
-it('build a Passenger with predefined seat', () => {
-    const plane = new Plane_1.default(10, 2, 2);
+it('builds a Passenger with predefined seat', () => {
+    const plane = new Plane_1.default(2, 1, 2);
     const factory = new PassengerFactory_1.default(plane.seats);
-    const assignedSeat = new Seat_1.default(5, 6, 1);
-    const passenger = factory.buildPassenger(assignedSeat);
-    expect(passenger.assignedSeat).toEqual(assignedSeat);
+    const seat = plane.getSeat(1, 1);
+    const passenger = factory.buildPassenger(seat);
+    expect(passenger.assignedSeat).toEqual(seat);
 });
-it('Assigns created passenger seats to their passengers', () => {
+it('assigns created passenger seats to their passengers', () => {
     const plane = new Plane_1.default(5, 2, 2);
     const factory = new PassengerFactory_1.default(plane.seats);
     const passengers = [];
@@ -48,6 +48,7 @@ it('throws when preassigned seat is taken', () => {
     const takenSeat = new Seat_1.default(1, 1, 1);
     const factory = new PassengerFactory_1.default([takenSeat]);
     expect(() => {
+        factory.buildPassenger(takenSeat);
         factory.buildPassenger(takenSeat);
     }).toThrow();
 });

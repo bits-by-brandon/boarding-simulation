@@ -5,7 +5,7 @@ import random from "../utility/random";
 class PassengerFactory {
     private readonly _availableSeats: Seat[];
 
-    buildPassenger(assignedSeat: Seat|null = null, bags: number|null = null): Passenger {
+    buildPassenger(seat: Seat | null = null, bags: number | null = null): Passenger {
         if (this._availableSeats.length === 0) {
             throw 'All seats are sold out. Cannot create any more passengers';
         }
@@ -13,25 +13,29 @@ class PassengerFactory {
         // Randomize the number of bags
         const numberOfBags = bags || random(0, 3);
 
-        if (assignedSeat !== null) {
-            if (!this._availableSeats.includes(assignedSeat)) {
-                // Create passenger with pre-assigned seat
-                return new Passenger(assignedSeat, numberOfBags);
+        let assignedSeat: Seat | null = null;
+
+        if (seat === null) {
+            // Select a seat at random
+            assignedSeat = this._availableSeats[random(0, this._availableSeats.length - 1)];
+
+        } else {
+
+            if (!this._availableSeats.includes(seat)) {
+                console.log(seat);
+                console.log(this._availableSeats);
+                throw 'Pre-assigned seat is not available'
             }
-            throw 'Pre-assigned seat is already taken'
+
+            assignedSeat = seat;
         }
 
-        // Select a seat at random
-        const seatIndex = random(0, this._availableSeats.length - 1);
-        const seat = this._availableSeats[seatIndex];
-
         // Remove the seat from the available array
-        this._availableSeats.splice(seatIndex, 1);
+        this._availableSeats.splice(this._availableSeats.indexOf(assignedSeat), 1);
 
-        const passenger = new Passenger(seat, numberOfBags);
+        const passenger = new Passenger(assignedSeat, numberOfBags);
 
-        // Assign the seat to the passenger
-        seat.assignedPassenger = passenger;
+        passenger.init();
 
         return passenger;
     }

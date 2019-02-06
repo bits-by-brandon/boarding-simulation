@@ -1,5 +1,6 @@
 import Seat from "./Seat";
 import Lane from "./Lane";
+import Passenger from "./Passenger";
 
 class Plane {
     get lane(): Lane {
@@ -49,7 +50,7 @@ class Plane {
         return this._seats;
     }
 
-    getLaneRow(row: number) {
+    getLaneRow(row: number): Passenger|null {
         return this._lane.getRow(row);
     }
 

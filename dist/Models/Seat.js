@@ -1,14 +1,17 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 class Seat {
+    set occupied(value) {
+        this._occupied = value;
+    }
+    get seatLabel() {
+        return this._seatLabel;
+    }
     get assignedPassenger() {
         return this._assignedPassenger;
     }
     set assignedPassenger(value) {
         this._assignedPassenger = value;
-        if (this._assignedPassenger.assignedSeat !== this) {
-            this._assignedPassenger.assignedSeat = this;
-        }
     }
     get occupied() {
         return this._occupied;
@@ -22,11 +25,11 @@ class Seat {
     get boardingGroup() {
         return this._boardingGroup;
     }
-    occupy(passenger) {
-        this._occupied = passenger;
-    }
     getColumnLetter() {
         return String.fromCharCode(97 + this._column).toUpperCase();
+    }
+    makeSeatLabel() {
+        return this._row + '-' + this.getColumnLetter();
     }
     constructor(row, column, boardingGroup, assignedPassenger = null, occupied = null) {
         this._row = row;
@@ -34,6 +37,7 @@ class Seat {
         this._boardingGroup = boardingGroup;
         this._assignedPassenger = assignedPassenger;
         this._occupied = occupied;
+        this._seatLabel = this.makeSeatLabel();
     }
 }
 exports.default = Seat;

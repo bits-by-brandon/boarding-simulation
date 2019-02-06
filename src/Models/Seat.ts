@@ -1,15 +1,31 @@
 import Passenger from "./Passenger";
 
 class Seat {
+    set occupied(value: Passenger | null) {
+        this._occupied = value;
+    }
+    get seatLabel(): string {
+        return this._seatLabel;
+    }
+
+    private readonly _row: number;
+
+    private readonly _column: number;
+
+    private readonly _boardingGroup: number;
+
+    private _assignedPassenger: Passenger | null;
+
+    private _occupied: Passenger | null;
+
+    private readonly _seatLabel: string;
+
     get assignedPassenger(): Passenger | null {
         return this._assignedPassenger;
     }
 
     set assignedPassenger(value: Passenger | null) {
         this._assignedPassenger = value;
-        if (this._assignedPassenger.assignedSeat !== this) {
-            this._assignedPassenger.assignedSeat = this
-        }
     }
 
     get occupied(): Passenger | null {
@@ -28,23 +44,13 @@ class Seat {
         return this._boardingGroup;
     }
 
-    occupy(passenger: Passenger) {
-        this._occupied = passenger;
-    }
-
     getColumnLetter(): string {
         return String.fromCharCode(97 + this._column).toUpperCase();
     }
 
-    private readonly _row: number;
-
-    private readonly _column: number;
-
-    private readonly _boardingGroup: number;
-
-    private _assignedPassenger: Passenger | null;
-
-    private _occupied: Passenger | null;
+    makeSeatLabel(): string {
+        return this._row + '-' + this.getColumnLetter();
+    }
 
     /**
      * @param row
@@ -59,6 +65,7 @@ class Seat {
         this._boardingGroup = boardingGroup;
         this._assignedPassenger = assignedPassenger;
         this._occupied = occupied;
+        this._seatLabel = this.makeSeatLabel();
     }
 }
 
