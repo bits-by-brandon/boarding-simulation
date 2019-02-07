@@ -41,6 +41,11 @@ class Plane {
     getBoardingGroup(groupNumber) {
         return this._seats.filter(seat => seat.boardingGroup === groupNumber);
     }
+    reset() {
+        this._seats.forEach(seat => {
+            seat.assignedPassenger = null;
+        });
+    }
 }
 exports.default = Plane;
 //# sourceMappingURL=Plane.js.map

@@ -2,23 +2,28 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2c7a8e10-d95a-41ad-b462-4f72556de8f1" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/Models/Seat.test.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Models/Passenger.test.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dist/Models/Passenger.js" beforeDir="false" afterPath="$PROJECT_DIR$/dist/Models/Passenger.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dist/Models/Passenger.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/dist/Models/Passenger.js.map" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dist/Models/PassengerFactory.js" beforeDir="false" afterPath="$PROJECT_DIR$/dist/Models/PassengerFactory.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dist/Models/PassengerFactory.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/dist/Models/PassengerFactory.js.map" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dist/Models/PassengerFactory.test.js" beforeDir="false" afterPath="$PROJECT_DIR$/dist/Models/PassengerFactory.test.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/Models/PassengerFactory.test.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/dist/Models/PassengerFactory.test.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/Models/Plane.js" beforeDir="false" afterPath="$PROJECT_DIR$/dist/Models/Plane.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dist/Models/Plane.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/dist/Models/Plane.js.map" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dist/Models/Plane.test.js" beforeDir="false" afterPath="$PROJECT_DIR$/dist/Models/Plane.test.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dist/Models/Plane.test.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/dist/Models/Plane.test.js.map" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dist/Models/Seat.js" beforeDir="false" afterPath="$PROJECT_DIR$/dist/Models/Seat.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dist/Models/Seat.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/dist/Models/Seat.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/Models/Seat.test.js" beforeDir="false" afterPath="$PROJECT_DIR$/dist/Models/Seat.test.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/Models/Seat.test.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/dist/Models/Seat.test.js.map" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Models/Passenger.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/Models/Passenger.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Models/PassengerFactory.test.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/Models/PassengerFactory.test.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Models/PassengerFactory.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/Models/PassengerFactory.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Models/Plane.test.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/Models/Plane.test.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Models/Plane.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/Models/Plane.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Models/Seat.test.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/Models/Seat.test.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Models/Seat.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/Models/Seat.ts" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -28,23 +33,23 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="CoverageDataManager">
-    <SUITE FILE_PATH="coverage/boarding_simulation$All_Tests.info" NAME="All Tests Coverage Results" MODIFIED="1549465272315" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="JestJavaScriptTestRunnerCoverage" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/boarding_simulation$All_Tests.info" NAME="All Tests Coverage Results" MODIFIED="1549515915164" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="JestJavaScriptTestRunnerCoverage" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
     <SUITE FILE_PATH="coverage/boarding_simulation$assigns_seat_boarding_groups.info" NAME="assigns seat boarding groups Coverage Results" MODIFIED="1549462834656" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="JestJavaScriptTestRunnerCoverage" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
-    <SUITE FILE_PATH="coverage/boarding_simulation$All_Tests_Watch.info" NAME="All Tests Watch Coverage Results" MODIFIED="1549466995584" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="JestJavaScriptTestRunnerCoverage" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/boarding_simulation$All_Tests_Watch.info" NAME="All Tests Watch Coverage Results" MODIFIED="1549515869881" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="JestJavaScriptTestRunnerCoverage" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
   </component>
   <component name="CoverageOptionsProvider">
     <option name="myAddOrReplace" value="0" />
   </component>
   <component name="CoverageViewManager">
-    <option name="myElementSize" value="371" />
+    <option name="myElementSize" value="521" />
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Models/Passenger.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="470">
-              <caret line="60" column="42" selection-start-line="60" selection-start-column="42" selection-end-line="60" selection-end-column="42" />
+            <state relative-caret-position="401">
+              <caret line="37" column="8" selection-start-line="37" selection-start-column="8" selection-end-line="37" selection-end-column="8" />
               <folding>
                 <element signature="e#0#28#0" expanded="true" />
               </folding>
@@ -55,8 +60,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Models/PassengerFactory.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="204">
-              <caret line="23" column="51" selection-start-line="23" selection-start-column="51" selection-end-line="23" selection-end-column="51" />
+            <state relative-caret-position="526">
+              <caret line="28" column="12" selection-start-line="28" selection-start-column="12" selection-end-line="28" selection-end-column="12" />
               <folding>
                 <element signature="e#0#36#0" expanded="true" />
               </folding>
@@ -64,13 +69,13 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/Models/PassengerFactory.test.ts">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Models/Passenger.test.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="194">
-              <caret line="21" column="9" selection-start-line="21" selection-start-column="9" selection-end-line="21" selection-end-column="9" />
+            <state relative-caret-position="480">
+              <caret line="38" column="14" selection-start-line="38" selection-start-column="14" selection-end-line="38" selection-end-column="14" />
               <folding>
-                <element signature="e#0#28#0" expanded="true" />
+                <element signature="e#0#36#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -79,8 +84,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Models/Plane.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="240">
-              <caret line="10" lean-forward="true" selection-start-line="10" selection-end-line="10" />
+            <state relative-caret-position="366">
+              <caret line="69" column="26" selection-start-line="69" selection-start-column="26" selection-end-line="69" selection-end-column="26" />
               <folding>
                 <element signature="e#0#26#0" expanded="true" />
               </folding>
@@ -89,12 +94,33 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Models/Seat.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="192">
+              <caret line="8" column="28" selection-start-line="8" selection-start-column="28" selection-end-line="8" selection-end-column="28" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Models/Seat.test.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="414">
-              <caret line="38" column="38" selection-start-line="38" selection-start-column="38" selection-end-line="38" selection-end-column="38" />
+            <state relative-caret-position="228">
+              <caret line="30" column="41" selection-start-line="30" selection-start-column="41" selection-end-line="30" selection-end-column="41" />
               <folding>
                 <element signature="e#0#26#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Models/PassengerFactory.test.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1289">
+              <caret line="55" column="4" selection-start-line="55" selection-start-column="4" selection-end-line="55" selection-end-column="4" />
+              <folding>
+                <element signature="e#0#28#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -109,6 +135,14 @@
         <option value="JavaScript File" />
       </list>
     </option>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>this._availableSeats</find>
+    </findStrings>
+    <replaceStrings>
+      <replace>availableSeats</replace>
+    </replaceStrings>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -132,12 +166,13 @@
         <option value="$PROJECT_DIR$/src/index.ts" />
         <option value="$PROJECT_DIR$/src/Views/TerminalRenderer.ts" />
         <option value="$PROJECT_DIR$/jest.config.js" />
-        <option value="$PROJECT_DIR$/src/Models/Plane.ts" />
-        <option value="$PROJECT_DIR$/src/Models/Plane.test.ts" />
-        <option value="$PROJECT_DIR$/src/Models/Seat.ts" />
         <option value="$PROJECT_DIR$/src/Models/Passenger.ts" />
+        <option value="$PROJECT_DIR$/src/Models/Plane.ts" />
+        <option value="$PROJECT_DIR$/src/Models/Seat.ts" />
         <option value="$PROJECT_DIR$/src/Models/Seat.test.ts" />
+        <option value="$PROJECT_DIR$/src/Models/Passenger.test.ts" />
         <option value="$PROJECT_DIR$/src/Models/PassengerFactory.ts" />
+        <option value="$PROJECT_DIR$/src/Models/Plane.test.ts" />
         <option value="$PROJECT_DIR$/src/Models/PassengerFactory.test.ts" />
       </list>
     </option>
@@ -245,6 +280,32 @@
       </test-names>
       <method v="2" />
     </configuration>
+    <configuration name="creates a default passenger" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
+      <node-interpreter value="project" />
+      <node-options value="" />
+      <jest-package value="$PROJECT_DIR$/node_modules/jest" />
+      <working-dir value="$PROJECT_DIR$" />
+      <envs />
+      <scope-kind value="TEST" />
+      <test-file value="$PROJECT_DIR$/src/Models/Passenger.test.ts" />
+      <test-names>
+        <test-name value="creates a default passenger" />
+      </test-names>
+      <method v="2" />
+    </configuration>
+    <configuration name="initializes a seat" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
+      <node-interpreter value="project" />
+      <node-options value="" />
+      <jest-package value="$PROJECT_DIR$/node_modules/jest" />
+      <working-dir value="$PROJECT_DIR$" />
+      <envs />
+      <scope-kind value="TEST" />
+      <test-file value="$PROJECT_DIR$/src/Models/Passenger.test.ts" />
+      <test-names>
+        <test-name value="initializes a seat" />
+      </test-names>
+      <method v="2" />
+    </configuration>
     <configuration name="returns the correct seat label" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
       <node-interpreter value="project" />
       <node-options value="" />
@@ -256,19 +317,6 @@
       <test-names>
         <test-name value="returns the correct seat label" />
       </test-names>
-      <method v="2" />
-    </configuration>
-    <configuration name="index.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/dist/index.js" working-dir="$PROJECT_DIR$">
-      <method v="2" />
-    </configuration>
-    <configuration name="build:watch" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
-      <package-json value="$PROJECT_DIR$/package.json" />
-      <command value="run" />
-      <scripts>
-        <script value="build:watch" />
-      </scripts>
-      <node-interpreter value="project" />
-      <envs />
       <method v="2" />
     </configuration>
     <configuration name="start" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
@@ -284,19 +332,19 @@
     <list>
       <item itemvalue="Jest.All Tests" />
       <item itemvalue="Jest.All Tests Watch" />
-      <item itemvalue="Node.js.index.js" />
-      <item itemvalue="npm.build:watch" />
       <item itemvalue="npm.start" />
       <item itemvalue="Jest.assigns seat boarding groups" />
       <item itemvalue="Jest.returns the correct seat label" />
+      <item itemvalue="Jest.initializes a seat" />
+      <item itemvalue="Jest.creates a default passenger" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Jest.creates a default passenger" />
+        <item itemvalue="Jest.initializes a seat" />
         <item itemvalue="Jest.returns the correct seat label" />
         <item itemvalue="Jest.assigns seat boarding groups" />
         <item itemvalue="npm.start" />
-        <item itemvalue="npm.build:watch" />
-        <item itemvalue="Node.js.index.js" />
       </list>
     </recent_temporary>
   </component>
@@ -316,39 +364,39 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="All_Tests_Watch - 2019.02.06 at 10h 17m 14s.xml">
+    <history-entry file="All_Tests_Watch - 2019.02.07 at 00h 00m 48s.xml">
       <configuration name="All Tests Watch" configurationId="JavaScriptTestRunnerJest" />
     </history-entry>
-    <history-entry file="All_Tests_Watch - 2019.02.06 at 10h 19m 56s.xml">
+    <history-entry file="All_Tests_Watch - 2019.02.07 at 00h 01m 14s.xml">
       <configuration name="All Tests Watch" configurationId="JavaScriptTestRunnerJest" />
     </history-entry>
-    <history-entry file="All_Tests_Watch - 2019.02.06 at 10h 20m 36s.xml">
+    <history-entry file="All_Tests_Watch - 2019.02.07 at 00h 01m 17s.xml">
       <configuration name="All Tests Watch" configurationId="JavaScriptTestRunnerJest" />
     </history-entry>
-    <history-entry file="All_Tests_Watch - 2019.02.06 at 10h 21m 25s.xml">
+    <history-entry file="All_Tests_Watch - 2019.02.07 at 00h 01m 27s.xml">
       <configuration name="All Tests Watch" configurationId="JavaScriptTestRunnerJest" />
     </history-entry>
-    <history-entry file="All_Tests_Watch - 2019.02.06 at 10h 22m 29s.xml">
+    <history-entry file="All_Tests_Watch - 2019.02.07 at 00h 02m 37s.xml">
       <configuration name="All Tests Watch" configurationId="JavaScriptTestRunnerJest" />
     </history-entry>
-    <history-entry file="All_Tests_Watch - 2019.02.06 at 10h 23m 18s.xml">
+    <history-entry file="All_Tests_Watch - 2019.02.07 at 00h 02m 47s.xml">
       <configuration name="All Tests Watch" configurationId="JavaScriptTestRunnerJest" />
     </history-entry>
-    <history-entry file="All_Tests_Watch - 2019.02.06 at 10h 24m 04s.xml">
+    <history-entry file="All_Tests_Watch - 2019.02.07 at 00h 04m 01s.xml">
       <configuration name="All Tests Watch" configurationId="JavaScriptTestRunnerJest" />
     </history-entry>
-    <history-entry file="All_Tests_Watch - 2019.02.06 at 10h 26m 26s.xml">
+    <history-entry file="All_Tests_Watch - 2019.02.07 at 00h 04m 26s.xml">
       <configuration name="All Tests Watch" configurationId="JavaScriptTestRunnerJest" />
     </history-entry>
-    <history-entry file="All_Tests_Watch - 2019.02.06 at 10h 27m 22s.xml">
+    <history-entry file="All_Tests_Watch - 2019.02.07 at 00h 04m 29s.xml">
       <configuration name="All Tests Watch" configurationId="JavaScriptTestRunnerJest" />
     </history-entry>
-    <history-entry file="All_Tests_Watch - 2019.02.06 at 10h 29m 55s.xml">
-      <configuration name="All Tests Watch" configurationId="JavaScriptTestRunnerJest" />
+    <history-entry file="All_Tests - 2019.02.07 at 00h 05m 15s.xml">
+      <configuration name="All Tests" configurationId="JavaScriptTestRunnerJest" />
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="27854000" />
+    <option name="totallyTimeSpent" value="34996000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1680" height="1027" extended-state="0" />
@@ -361,7 +409,7 @@
       <window_info anchor="bottom" id="Quokka" order="0" />
       <window_info anchor="bottom" id="Message" order="1" />
       <window_info anchor="bottom" id="Find" order="2" />
-      <window_info active="true" anchor="bottom" id="Run" order="3" sideWeight="0.6394349" side_tool="true" visible="true" weight="0.30458516" />
+      <window_info anchor="bottom" id="Run" order="3" sideWeight="0.6105651" side_tool="true" visible="true" weight="0.29803494" />
       <window_info anchor="bottom" id="Debug" order="4" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="5" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="6" weight="0.4" />
@@ -370,10 +418,10 @@
       <window_info anchor="bottom" id="Version Control" order="9" />
       <window_info anchor="bottom" id="Database Changes" order="10" />
       <window_info anchor="bottom" id="TypeScript" order="11" sideWeight="0.4987715" weight="0.32969433" />
-      <window_info anchor="bottom" id="Terminal" order="12" sideWeight="0.3605651" visible="true" weight="0.30458516" />
+      <window_info anchor="bottom" id="Terminal" order="12" sideWeight="0.3605651" weight="0.34279475" />
       <window_info anchor="bottom" id="npm" order="13" sideWeight="0.5005325" side_tool="true" weight="0.33733624" />
       <window_info anchor="bottom" id="Event Log" order="14" side_tool="true" />
-      <window_info anchor="right" id="Coverage" side_tool="true" visible="true" weight="0.2985258" />
+      <window_info active="true" anchor="bottom" id="Coverage" order="15" sideWeight="0.3894349" visible="true" weight="0.29803494" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -460,38 +508,6 @@
     <entry file="file://$PROJECT_DIR$/coverage/lcov.info">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Models/Plane.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="10" lean-forward="true" selection-start-line="10" selection-end-line="10" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Models/Seat.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="307">
-          <caret line="30" column="8" selection-start-line="30" selection-start-column="8" selection-end-line="30" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Models/Plane.test.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="288">
-          <caret line="12" column="59" selection-start-line="12" selection-start-column="59" selection-end-line="12" selection-end-column="59" />
-          <folding>
-            <element signature="e#0#27#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dist/Models/PassengerFactory.test.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-690" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/package.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="504">
@@ -513,40 +529,80 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Models/Passenger.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="470">
-          <caret line="60" column="42" selection-start-line="60" selection-start-column="42" selection-end-line="60" selection-end-column="42" />
-          <folding>
-            <element signature="e#0#28#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
+    <entry file="file://$PROJECT_DIR$/dist/Models/PassengerFactory.test.js">
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Models/PassengerFactory.ts">
+    <entry file="file://$PROJECT_DIR$/src/Models/Plane.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="23" column="51" selection-start-line="23" selection-start-column="51" selection-end-line="23" selection-end-column="51" />
-          <folding>
-            <element signature="e#0#36#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Models/Seat.test.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="414">
-          <caret line="38" column="38" selection-start-line="38" selection-start-column="38" selection-end-line="38" selection-end-column="38" />
+        <state relative-caret-position="366">
+          <caret line="69" column="26" selection-start-line="69" selection-start-column="26" selection-end-line="69" selection-end-column="26" />
           <folding>
             <element signature="e#0#26#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/Models/Seat.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="192">
+          <caret line="8" column="28" selection-start-line="8" selection-start-column="28" selection-end-line="8" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Models/Seat.test.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="228">
+          <caret line="30" column="41" selection-start-line="30" selection-start-column="41" selection-end-line="30" selection-end-column="41" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Models/PassengerFactory.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="526">
+          <caret line="28" column="12" selection-start-line="28" selection-start-column="12" selection-end-line="28" selection-end-column="12" />
+          <folding>
+            <element signature="e#0#36#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Models/Plane.test.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="552">
+          <caret line="23" column="2" selection-start-line="23" selection-start-column="2" selection-end-line="23" selection-end-column="2" />
+          <folding>
+            <element signature="e#0#27#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/Models/PassengerFactory.test.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="194">
-          <caret line="21" column="9" selection-start-line="21" selection-start-column="9" selection-end-line="21" selection-end-column="9" />
+        <state relative-caret-position="1289">
+          <caret line="55" column="4" selection-start-line="55" selection-start-column="4" selection-end-line="55" selection-end-column="4" />
+          <folding>
+            <element signature="e#0#28#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Models/Passenger.test.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="480">
+          <caret line="38" column="14" selection-start-line="38" selection-start-column="14" selection-end-line="38" selection-end-column="14" />
+          <folding>
+            <element signature="e#0#36#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Models/Passenger.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="401">
+          <caret line="37" column="8" selection-start-line="37" selection-start-column="8" selection-end-line="37" selection-end-column="8" />
           <folding>
             <element signature="e#0#28#0" expanded="true" />
           </folding>

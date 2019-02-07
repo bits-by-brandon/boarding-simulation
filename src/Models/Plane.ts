@@ -62,6 +62,15 @@ class Plane {
         return this._seats.filter(seat => seat.boardingGroup === groupNumber)
     }
 
+    /**
+     * Set all seat assignments to null
+     */
+    reset(): void {
+        this._seats.forEach(seat => {
+            seat.assignedPassenger = null;
+        });
+    }
+
 }
 
 export default Plane;

@@ -1,5 +1,6 @@
 import Plane from './Plane'
 import Lane from "./Lane";
+import PassengerFactory from "./PassengerFactory";
 
 it('creates the right amount of seats', () => {
     const plane = new Plane(3, 4, 2);
@@ -42,4 +43,16 @@ it('gets the correct seat', () => {
 
     expect(expectedSeat.row).toEqual(5);
     expect(expectedSeat.column).toEqual(3);
+});
+
+it('resets the plane state', () => {
+    const plane = new Plane(10, 2, 2);
+    const seat = plane.getSeat(0, 1);
+    const passenger = new PassengerFactory(plane).buildPassenger(seat);
+
+    expect(plane.getSeat(0, 1).assignedPassenger).toBe(passenger);
+
+    plane.reset();
+
+    expect(plane.getSeat(0, 1).assignedPassenger).toBeNull();
 });

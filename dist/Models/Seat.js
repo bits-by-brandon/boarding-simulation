@@ -5,7 +5,7 @@ class Seat {
         this._occupied = value;
     }
     get seatLabel() {
-        return this._seatLabel;
+        return (this._row + 1) + '-' + String.fromCharCode(97 + this._column).toUpperCase();
     }
     get assignedPassenger() {
         return this._assignedPassenger;
@@ -25,19 +25,12 @@ class Seat {
     get boardingGroup() {
         return this._boardingGroup;
     }
-    getColumnLetter() {
-        return String.fromCharCode(97 + this._column).toUpperCase();
-    }
-    makeSeatLabel() {
-        return this._row + '-' + this.getColumnLetter();
-    }
     constructor(row, column, boardingGroup, assignedPassenger = null, occupied = null) {
         this._row = row;
         this._column = column;
         this._boardingGroup = boardingGroup;
         this._assignedPassenger = assignedPassenger;
         this._occupied = occupied;
-        this._seatLabel = this.makeSeatLabel();
     }
 }
 exports.default = Seat;
