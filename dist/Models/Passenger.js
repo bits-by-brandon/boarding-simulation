@@ -25,6 +25,9 @@ class Passenger {
             this._assignedSeat.assignedPassenger = this;
         }
     }
+    get status() {
+        return this._status;
+    }
     constructor(plane, assignedSeat = null, baggageCount = 1, currentPosition = null) {
         this._assignedSeat = assignedSeat;
         this._currentPosition = currentPosition;
@@ -42,11 +45,10 @@ class Passenger {
         }
         if (this.currentPosition === this._assignedSeat.row) {
             if (this._baggageCount > 0) {
-                console.log(`passenger ${this._assignedSeat.seatLabel} is stowing`);
                 this._baggageCount--;
+                this._status = 'stowing';
                 return;
             }
-            console.log(`passenger ${this._assignedSeat.seatLabel} is sitting`);
             this.sit(this._assignedSeat);
             return;
         }
@@ -54,10 +56,12 @@ class Passenger {
             && this._plane.getLaneRow(this._currentPosition + 1) === null) {
             const nextRow = this._currentPosition + 1;
             console.log(`passenger ${this._assignedSeat.seatLabel} is moving to ${nextRow}`);
+            this._status = 'moving';
             this._plane.setLaneRow(nextRow, this);
             this._currentPosition = nextRow;
             return;
         }
+        this._status = 'waiting';
         console.log(`passenger ${this._assignedSeat.seatLabel} is waiting`);
     }
     sit(seat) {
@@ -69,6 +73,7 @@ class Passenger {
         }
         seat.occupied = this;
         this._currentPosition = seat;
+        this._status = 'seated';
         return true;
     }
 }

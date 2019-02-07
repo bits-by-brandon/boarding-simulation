@@ -19,8 +19,6 @@ class Seat {
 
     private _occupied: Passenger | null;
 
-    // private readonly _seatLabel: string;
-
     get assignedPassenger(): Passenger | null {
         return this._assignedPassenger;
     }

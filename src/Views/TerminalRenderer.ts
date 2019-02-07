@@ -3,6 +3,10 @@ import Seat from "../Models/Seat";
 import IRenderer from "./IRenderer";
 import Lane from "../Models/Lane";
 import PassengerQueue from "../Models/PassengerQueue";
+import Config from "../Config";
+import Passenger from "../Models/Passenger";
+
+const config = Config.getInstance();
 
 class TerminalRenderer implements IRenderer {
 
@@ -16,19 +20,24 @@ class TerminalRenderer implements IRenderer {
     public render(): string {
         console.clear();
 
-        let frameLines = [];
+        const frameLines = [];
 
-        //TODO: Replace with row guide bool
-        if (true) {
+        if (config.showRowNumbers) {
             frameLines.push(TerminalRenderer.renderRowNumbers(this._plane.rows));
         }
 
+        // Render each line
         for (let c = 0; c < this._plane.columns; c++) {
-            let column: string = '';
 
             // Render the lane halfway through the columns
             if (c === this._plane.columns / 2) {
-                frameLines.push(TerminalRenderer.renderLane(this._plane.lane));
+                frameLines.push(this.renderLane(this._plane.lane));
+            }
+
+            let column: string = '';
+
+            if (config.showColumnNumbers) {
+                column += String.fromCharCode(97 + c).toUpperCase() + ' '
             }
 
             // Render each row in the column
@@ -39,11 +48,12 @@ class TerminalRenderer implements IRenderer {
             frameLines.push(column);
         }
 
-        frameLines.push(TerminalRenderer.renderQueue(this._plane.queue));
+        frameLines.push(this.renderQueue(this._plane.queue));
 
         frameLines.push(this.renderStats());
 
         const frame = frameLines.reduce((lines, line) => lines.concat(line + '\n'), '');
+
         console.log(frame);
 
         if (this._plane.queue.length === 0 && this._plane.lane.occupied === 0) {
@@ -67,33 +77,81 @@ class TerminalRenderer implements IRenderer {
 
     static renderRowNumbers(rows: number): string {
         let output = '';
+
+        if (config.showColumnNumbers) {
+            output += '  ';
+        }
+
         for (let r = 0; r < rows; r++) {
-            if (r <= 10) {
+            if (r < 10) {
                 output += ' ';
             }
-            output += ' ' + r + ' ';
+            output += ' ' + (r + 1) + ' ';
         }
         return output;
     }
 
-    static renderLane(lane: Lane): string {
+    renderLane(lane: Lane): string {
         let output = ' ';
-        for (let r = 0; r < Object.keys(lane.rows).length; r++) {
-            output += lane.getRow(r) !== null ? ' X  ' : '    ';
+
+        if (config.showColumnNumbers) {
+            output += '  ';
         }
-        return output + '  '
+
+        for (let r = 0; r < Object.keys(lane.rows).length; r++) {
+            const passengerInRow = lane.getRow(r);
+            if(passengerInRow !== null) {
+                output += ` ${this.renderPassenger(passengerInRow)}  `;
+            } else {
+                output += '    ';
+            }
+        }
+
+        return output
     }
 
-    static renderQueue(queue: PassengerQueue): string {
+    renderQueue(queue: PassengerQueue): string {
         let output = '\n';
+
+        if (config.showColumnNumbers) {
+            output += '   ';
+        }
+
+        output += `Queue: ${queue.length}`;
+
         for (let r = 0; r < queue.length; r++) {
-            output += ' X';
+            if (r % (this._plane.rows * 2) === 0) {
+                output += '\n';
+
+                if (config.showColumnNumbers) {
+                    output += '  ';
+                }
+            }
+
+            output += ' O';
         }
         return output
     }
 
     renderStats(): string {
-        return `steps: ${this._stepCount}\t queue:${this._plane.queue.length}`;
+        let output = '\n';
+        if (config.showColumnNumbers) {
+            output += '   ';
+        }
+        output += `steps: ${this._stepCount}`;
+        return output;
+    }
+
+    renderPassenger(passenger: Passenger): string {
+        switch (passenger.status) {
+            case 'stowing':
+                return '#';
+            case 'moving':
+            case 'waiting':
+            case 'sitting':
+            default:
+                return 'O';
+        }
     }
 }
 

@@ -2,7 +2,6 @@ import Plane from "./Plane";
 import Seat from "./Seat";
 
 class Passenger {
-
     private _plane: Plane;
 
     private _assignedSeat: Seat | null;
@@ -10,6 +9,8 @@ class Passenger {
     private _currentPosition: number | Seat | null;
 
     private _baggageCount: number;
+
+    private _status: string;
 
     get currentPosition(): number | Seat | null {
         return this._currentPosition;
@@ -45,6 +46,10 @@ class Passenger {
         }
     }
 
+    get status(): string {
+        return this._status;
+    }
+
     /**
      * @param plane
      * @param assignedSeat
@@ -74,14 +79,15 @@ class Passenger {
 
             // Check if any baggage needs to be stowed
             if(this._baggageCount > 0) {
-                console.log(`passenger ${this._assignedSeat.seatLabel} is stowing`);
+                //TODO: implement logging utility
+                // console.log(`passenger ${this._assignedSeat.seatLabel} is stowing`);
+
                 // spend the step cycle stowing baggage
                 this._baggageCount--;
+                this._status = 'stowing';
+
                 return
             }
-
-            console.log(`passenger ${this._assignedSeat.seatLabel} is sitting`);
-
             this.sit(this._assignedSeat);
             return
         }
@@ -95,6 +101,7 @@ class Passenger {
             //  of the Passenger in the lane?
 
             console.log(`passenger ${this._assignedSeat.seatLabel} is moving to ${nextRow}`);
+            this._status = 'moving';
 
             this._plane.setLaneRow(nextRow, this);
             this._currentPosition = nextRow;
@@ -102,6 +109,7 @@ class Passenger {
             return
         }
 
+        this._status = 'waiting';
         console.log(`passenger ${this._assignedSeat.seatLabel} is waiting`);
     }
 
@@ -117,6 +125,7 @@ class Passenger {
 
         seat.occupied = this;
         this._currentPosition = seat;
+        this._status = 'seated';
         return true
     }
 
