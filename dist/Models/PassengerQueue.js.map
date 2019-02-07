@@ -1,0 +1,1 @@
+{"version":3,"file":"PassengerQueue.js","sourceRoot":"","sources":["../../src/Models/PassengerQueue.ts"],"names":[],"mappings":";;AAEA,MAAM,cAAc;IAGhB,YAAY,aAAiC,IAAI;QAC7C,IAAI,CAAC,WAAW,GAAG,UAAU,CAAA;IACjC,CAAC;IAED,GAAG,CAAC,SAAoB;QACpB,IAAI,CAAC,WAAW,CAAC,IAAI,CAAC,SAAS,CAAC,CAAC;IACrC,CAAC;IAED,IAAI,CAAC,QAAwB;QACjC,EAAE,CAAA;IACE,CAAC;CACJ"}

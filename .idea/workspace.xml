@@ -35,7 +35,7 @@
   <component name="CoverageDataManager">
     <SUITE FILE_PATH="coverage/boarding_simulation$All_Tests.info" NAME="All Tests Coverage Results" MODIFIED="1549515915164" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="JestJavaScriptTestRunnerCoverage" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
     <SUITE FILE_PATH="coverage/boarding_simulation$assigns_seat_boarding_groups.info" NAME="assigns seat boarding groups Coverage Results" MODIFIED="1549462834656" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="JestJavaScriptTestRunnerCoverage" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
-    <SUITE FILE_PATH="coverage/boarding_simulation$All_Tests_Watch.info" NAME="All Tests Watch Coverage Results" MODIFIED="1549515869881" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="JestJavaScriptTestRunnerCoverage" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/boarding_simulation$All_Tests_Watch.info" NAME="All Tests Watch Coverage Results" MODIFIED="1549545091164" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="JestJavaScriptTestRunnerCoverage" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
   </component>
   <component name="CoverageOptionsProvider">
     <option name="myAddOrReplace" value="0" />

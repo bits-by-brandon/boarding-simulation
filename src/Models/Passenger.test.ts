@@ -7,7 +7,7 @@ let globalPlane: Plane;
 let globalFactory: PassengerFactory;
 
 beforeEach(() => {
-    globalPlane = new Plane(2, 2, 1);
+    globalPlane = new Plane(4, 2, 1);
     globalFactory = new PassengerFactory(globalPlane);
 });
 
@@ -39,4 +39,12 @@ it('updates assigned seat', () => {
     passenger.assignedSeat = seat2;
 
     expect(passenger.assignedSeat).toBe(seat2);
+});
+
+it('takes a step', () => {
+    globalPlane.reset();
+    const seat1 = globalPlane.getSeat(2, 1);
+    const passenger = globalFactory.buildPassenger(seat1);
+
+    expect(passenger.assignedSeat).toBe(seat1);
 });

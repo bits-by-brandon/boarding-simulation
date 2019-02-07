@@ -7,7 +7,7 @@ const Plane_1 = require("./Plane");
 let globalPlane;
 let globalFactory;
 beforeEach(() => {
-    globalPlane = new Plane_1.default(2, 2, 1);
+    globalPlane = new Plane_1.default(4, 2, 1);
     globalFactory = new PassengerFactory_1.default(globalPlane);
 });
 it('creates a default passenger', () => {
@@ -31,5 +31,11 @@ it('updates assigned seat', () => {
     expect(passenger.assignedSeat).toBe(seat1);
     passenger.assignedSeat = seat2;
     expect(passenger.assignedSeat).toBe(seat2);
+});
+it('takes a step', () => {
+    globalPlane.reset();
+    const seat1 = globalPlane.getSeat(2, 1);
+    const passenger = globalFactory.buildPassenger(seat1);
+    expect(passenger.assignedSeat).toBe(seat1);
 });
 //# sourceMappingURL=Passenger.test.js.map
