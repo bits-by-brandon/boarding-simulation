@@ -1,11 +1,10 @@
 import Seat from "./Seat";
 import Lane from "./Lane";
 import Passenger from "./Passenger";
+import PassengerQueue from "./PassengerQueue";
 
 class Plane {
-    get lane(): Lane {
-        return this._lane;
-    }
+    private _queue: PassengerQueue;
 
     private readonly _rows: number;
 
@@ -17,9 +16,10 @@ class Plane {
 
     private _lane: Lane;
 
-    constructor(rows: number, columnsPerRowSide: number, boardingGroups: number) {
+    constructor(queue: PassengerQueue, rows: number, columnsPerSide: number, boardingGroups: number) {
+        this._queue = queue;
         this._rows = rows;
-        this._columns = columnsPerRowSide * 2;
+        this._columns = columnsPerSide * 2;
         this._boardingGroups = boardingGroups;
         this._seats = [];
         this._lane = new Lane(rows);
@@ -50,8 +50,20 @@ class Plane {
         return this._seats;
     }
 
-    getLaneRow(row: number): Passenger|null {
+    get lane(): Lane {
+        return this._lane;
+    }
+
+    get queue(): PassengerQueue {
+        return this._queue;
+    }
+
+    getLaneRow(row: number): Passenger | null {
         return this._lane.getRow(row);
+    }
+
+    setLaneRow(row: number, occupant: Passenger | null): void {
+        return this._lane.setRow(occupant, row);
     }
 
     getSeat(row: number, column: number) {
@@ -62,13 +74,35 @@ class Plane {
         return this._seats.filter(seat => seat.boardingGroup === groupNumber)
     }
 
+    update(): void {
+        // For each passenger in the row, run their step method
+        Object.keys(this._lane.rows)
+            .map(rowIndex => this._lane.getRow(parseInt(rowIndex)))
+            .filter(objectAtRow => objectAtRow !== null)
+            .forEach(passengerAtRow => {
+                passengerAtRow.step();
+            });
+
+        // If the first spot on the plane is available
+        if (this._lane.getRow(0) === null) {
+            // Move the next passenger in the queue to the plane lane
+            if (this._queue.length > 0) {
+                const boardedPassenger = this._queue.pop();
+                boardedPassenger.currentPosition = 0;
+                this._lane.setRow(boardedPassenger, 0);
+            }
+        }
+    }
+
     /**
-     * Set all seat assignments to null
+     * Set all seat assignments to null and clear the lane
      */
     reset(): void {
         this._seats.forEach(seat => {
             seat.assignedPassenger = null;
         });
+
+        //TODO: clear out the lane and the queue
     }
 
 }

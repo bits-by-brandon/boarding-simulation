@@ -8,7 +8,7 @@ class PassengerFactory {
         if (availableSeats.length === 0) {
             throw 'All seats are sold out. Cannot create any more passengers';
         }
-        const numberOfBags = bags || random_1.default(0, 3);
+        const numberOfBags = bags || random_1.default(1, 10);
         let assignedSeat = null;
         if (seat === null) {
             assignedSeat = availableSeats[random_1.default(0, availableSeats.length - 1)];

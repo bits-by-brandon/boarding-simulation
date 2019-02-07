@@ -2,73 +2,72 @@ import Plane from "./Plane";
 import PassengerFactory from "./PassengerFactory";
 import Seat from "./Seat";
 import Passenger from "./Passenger";
+import PassengerQueue from "./PassengerQueue";
+
+let globalPlane: Plane;
+let globalFactory: PassengerFactory;
+
+beforeEach(() => {
+    const queue = new PassengerQueue();
+    globalPlane = new Plane(queue, 4, 2, 1);
+    globalFactory = new PassengerFactory(globalPlane);
+});
 
 it('builds a Passenger', () => {
-    const plane = new Plane(10, 2, 2);
-    const factory = new PassengerFactory(plane);
-    const passenger = factory.buildPassenger();
+    globalPlane.reset();
+    const passenger = globalFactory.buildPassenger();
 
     expect(passenger).toBeInstanceOf(Passenger);
 });
 
 it('assigns built Passenger to a seat', () => {
-    const plane = new Plane(10, 2, 2);
-    const factory = new PassengerFactory(plane);
-    const passenger = factory.buildPassenger();
+    globalPlane.reset();
+    const passenger = globalFactory.buildPassenger();
 
     expect(passenger.assignedSeat).toBeInstanceOf(Seat);
 });
 
 it('builds a Passenger with predefined seat', () => {
-    const plane = new Plane(2, 1, 2);
-    const factory = new PassengerFactory(plane);
-
-    const seat = plane.getSeat(1, 1);
-    const passenger = factory.buildPassenger(seat);
+    globalPlane.reset();
+    const seat = globalPlane.getSeat(1, 1);
+    const passenger = globalFactory.buildPassenger(seat);
 
     expect(passenger.assignedSeat).toEqual(seat);
 });
 
 it('assigns created passenger seats to their passengers', () => {
-    const plane = new Plane(5, 2, 2);
-    const factory = new PassengerFactory(plane);
+    globalPlane.reset();
     const passengers: Passenger[] = [];
 
-    for (let i = 0; i < 20; i++) {
-        passengers.push(factory.buildPassenger());
+    for (let i = 0; i < 16; i++) {
+        passengers.push(globalFactory.buildPassenger());
     }
 
-    expect(plane.seats.filter(seat => seat.assignedPassenger === null).length).toEqual(0);
+    expect(globalPlane.seats.filter(seat => seat.assignedPassenger === null).length).toEqual(0);
 
     passengers.forEach(passenger => {
-        expect(plane.getSeat(passenger.assignedSeat.row, passenger.assignedSeat.column).assignedPassenger).toEqual(passenger);
+        expect(globalPlane.getSeat(passenger.assignedSeat.row, passenger.assignedSeat.column).assignedPassenger).toEqual(passenger);
     });
 });
 
 it('throws when seats are filled', () => {
-    // Create plane with 4 seats
-    const plane = new Plane(2, 1, 2);
-    const factory = new PassengerFactory(plane);
+    globalPlane.reset();
 
-    expect(factory.buildPassenger()).toBeInstanceOf(Passenger);
-    expect(factory.buildPassenger()).toBeInstanceOf(Passenger);
-    expect(factory.buildPassenger()).toBeInstanceOf(Passenger);
-    expect(factory.buildPassenger()).toBeInstanceOf(Passenger);
+    for (let i = 0; i < 16; i++) {
+        expect(globalFactory.buildPassenger()).toBeInstanceOf(Passenger);
+    }
 
     // on the 5th passenger
     expect(() => {
-        factory.buildPassenger()
+        globalFactory.buildPassenger()
     }).toThrow();
 });
 
 it('throws when preassigned seat is taken', () => {
-    const plane = new Plane(2, 1, 2);
-    const takenSeat = plane.getSeat(1, 0);
+    const takenSeat = globalPlane.getSeat(1, 0);
 
-    const factory = new PassengerFactory(plane);
-
-    expect(factory.buildPassenger(takenSeat)).toBeInstanceOf(Passenger);
+    expect(globalFactory.buildPassenger(takenSeat)).toBeInstanceOf(Passenger);
     expect(() => {
-        factory.buildPassenger(takenSeat);
+        globalFactory.buildPassenger(takenSeat);
     }).toThrow();
 });

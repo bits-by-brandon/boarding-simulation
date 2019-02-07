@@ -7,17 +7,27 @@ class Lane {
             this._rows[r] = null;
         }
     }
+    get occupied() {
+        return Object.keys(this._rows).filter(i => this._rows[parseInt(i)] !== null).length;
+    }
     get rows() {
         return this._rows;
     }
     getRow(row) {
         return this._rows[row];
     }
-    setRow(passenger, row) {
-        if (this._rows[row] !== null) {
-            throw 'Cannot move into lane position ' + row + '. The row is occupied';
+    setRow(newOccupant, row) {
+        if (newOccupant === null) {
+            this._rows[row] = newOccupant;
+            return;
         }
-        this._rows[row] = passenger;
+        if (this._rows[row] !== null) {
+            throw `Cannot move ${newOccupant.assignedSeat.seatLabel} into lane ${row}. Occupied by ${this.getRow(row)}`;
+        }
+        if (typeof newOccupant.currentPosition === "number") {
+            this._rows[newOccupant.currentPosition] = null;
+        }
+        this._rows[row] = newOccupant;
     }
 }
 exports.default = Lane;

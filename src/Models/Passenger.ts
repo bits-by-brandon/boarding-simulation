@@ -9,10 +9,17 @@ class Passenger {
 
     private _currentPosition: number | Seat | null;
 
-    private readonly _baggageCount: number;
+    private _baggageCount: number;
 
     get currentPosition(): number | Seat | null {
         return this._currentPosition;
+    }
+
+    set currentPosition(newPosition: number | Seat | null) {
+        if(typeof this._currentPosition === "number") {
+            this._plane.setLaneRow(this._currentPosition, null);
+        }
+        this._currentPosition = newPosition;
     }
 
     get baggageCount(): number {
@@ -58,18 +65,54 @@ class Passenger {
         }
     }
 
-    step(plane: Plane) {
+    step() {
         if (this._assignedSeat === this._currentPosition) {
             return
         }
 
-        // Check if in correct row
-        // Check if any baggage needs to be stowed
+        if(this.currentPosition === this._assignedSeat.row) {
+
+            // Check if any baggage needs to be stowed
+            if(this._baggageCount > 0) {
+                console.log(`passenger ${this._assignedSeat.seatLabel} is stowing`);
+                // spend the step cycle stowing baggage
+                this._baggageCount--;
+                return
+            }
+
+            console.log(`passenger ${this._assignedSeat.seatLabel} is sitting`);
+
+            this.sit(this._assignedSeat);
+            return
+        }
+
+
+        if (typeof this._currentPosition === 'number'
+            && this._plane.getLaneRow(this._currentPosition + 1) === null) {
+
+            const nextRow = this._currentPosition + 1;
+            // TODO: is this single responsibility? Who owns updating the position
+            //  of the Passenger in the lane?
+
+            console.log(`passenger ${this._assignedSeat.seatLabel} is moving to ${nextRow}`);
+
+            this._plane.setLaneRow(nextRow, this);
+            this._currentPosition = nextRow;
+
+            return
+        }
+
+        console.log(`passenger ${this._assignedSeat.seatLabel} is waiting`);
     }
 
     sit(seat: Seat): boolean {
         if (seat.occupied !== null) {
             return false
+        }
+
+        // TODO: Who's responsibility to update the lane when a passenger sits?
+        if(typeof this._currentPosition === "number") {
+            this._plane.setLaneRow(this._currentPosition, null);
         }
 
         seat.occupied = this;

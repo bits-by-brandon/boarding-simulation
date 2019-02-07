@@ -1,0 +1,14 @@
+{
+  "passengerCount": 80,
+  "rows": 12,
+  "columnsPerSide": 3,
+  "boardingGroups": 4,
+  "fps": 10,
+  "stepsPerBag": 5,
+  "seatShufflePenalty": 5,
+  "sortStrategy": "backToFront",
+  "showRowNumbers": true,
+  "showColumnNumbers": true,
+  "showBoardingGroups": true,
+  "showLog": true
+}

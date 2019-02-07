@@ -4,10 +4,12 @@ const Passenger_1 = require("./Passenger");
 const Seat_1 = require("./Seat");
 const PassengerFactory_1 = require("./PassengerFactory");
 const Plane_1 = require("./Plane");
+const PassengerQueue_1 = require("./PassengerQueue");
 let globalPlane;
 let globalFactory;
 beforeEach(() => {
-    globalPlane = new Plane_1.default(4, 2, 1);
+    const queue = new PassengerQueue_1.default();
+    globalPlane = new Plane_1.default(queue, 4, 2, 1);
     globalFactory = new PassengerFactory_1.default(globalPlane);
 });
 it('creates a default passenger', () => {

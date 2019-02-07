@@ -12,6 +12,10 @@ class Lane {
         }
     }
 
+    get occupied(): number {
+        return Object.keys(this._rows).filter(i => this._rows[parseInt(i)] !== null).length;
+    }
+
     get rows(): { [key: number]: Passenger | null } {
         return this._rows;
     }
@@ -20,11 +24,24 @@ class Lane {
         return this._rows[row];
     }
 
-    setRow(passenger: Passenger, row: number): void {
-        if( this._rows[row] !== null ) {
-            throw 'Cannot move into lane position ' + row + '. The row is occupied';
+    setRow(newOccupant: Passenger | null, row: number): void {
+        if (newOccupant === null) {
+            this._rows[row] = newOccupant;
+            return
         }
-        this._rows[row] = passenger;
+
+        if (this._rows[row] !== null) {
+            throw `Cannot move ${newOccupant.assignedSeat.seatLabel} into lane ${row}. Occupied by ${this.getRow(row)}`;
+        }
+
+        // TODO: Who's responsibility is it to move the passenger's position?
+
+        // unset the last position of the passenger
+        if (typeof newOccupant.currentPosition === "number") {
+            this._rows[newOccupant.currentPosition] = null;
+        }
+
+        this._rows[row] = newOccupant;
     }
 }
 

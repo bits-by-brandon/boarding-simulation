@@ -5,7 +5,7 @@ import Plane from "./Plane";
 
 class PassengerFactory {
 
-    private _plane: Plane;
+    private readonly _plane: Plane;
 
     buildPassenger(seat: Seat | null = null, bags: number | null = null): Passenger {
 
@@ -16,7 +16,7 @@ class PassengerFactory {
         }
 
         // Randomize the number of bags
-        const numberOfBags = bags || random(0, 3);
+        const numberOfBags = bags || random(1, 10);
 
         let assignedSeat: Seat | null = null;
 

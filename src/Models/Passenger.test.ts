@@ -2,12 +2,14 @@ import Passenger from "./Passenger";
 import Seat from "./Seat";
 import PassengerFactory from "./PassengerFactory";
 import Plane from "./Plane";
+import PassengerQueue from "./PassengerQueue";
 
 let globalPlane: Plane;
 let globalFactory: PassengerFactory;
 
 beforeEach(() => {
-    globalPlane = new Plane(4, 2, 1);
+    const queue = new PassengerQueue();
+    globalPlane = new Plane(queue, 4, 2, 1);
     globalFactory = new PassengerFactory(globalPlane);
 });
 
