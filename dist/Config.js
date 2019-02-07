@@ -40,7 +40,7 @@ class Config {
     }
     static getInstance() {
         if (!Config.instance) {
-            Config.instance = new Config(process.argv[6]);
+            Config.instance = new Config(process.argv[2]);
         }
         return Config.instance;
     }

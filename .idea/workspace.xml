@@ -2,47 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2c7a8e10-d95a-41ad-b462-4f72556de8f1" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/default.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Config.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Models/IPassengerSort.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Strategies/BackToFront.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Strategies/FrontToBack.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Strategies/Random.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Strategies/StrategyHelper.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontToBack.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/Models/Lane.js" beforeDir="false" afterPath="$PROJECT_DIR$/dist/Models/Lane.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/Models/Lane.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/dist/Models/Lane.js.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/Models/Passenger.js" beforeDir="false" afterPath="$PROJECT_DIR$/dist/Models/Passenger.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/Models/Passenger.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/dist/Models/Passenger.js.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/Models/Passenger.test.js" beforeDir="false" afterPath="$PROJECT_DIR$/dist/Models/Passenger.test.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/Models/Passenger.test.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/dist/Models/Passenger.test.js.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/Models/PassengerFactory.js" beforeDir="false" afterPath="$PROJECT_DIR$/dist/Models/PassengerFactory.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/Models/PassengerFactory.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/dist/Models/PassengerFactory.js.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/Models/PassengerFactory.test.js" beforeDir="false" afterPath="$PROJECT_DIR$/dist/Models/PassengerFactory.test.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/Models/PassengerFactory.test.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/dist/Models/PassengerFactory.test.js.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/Models/PassengerQueue.js" beforeDir="false" afterPath="$PROJECT_DIR$/dist/Models/PassengerQueue.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/Models/PassengerQueue.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/dist/Models/PassengerQueue.js.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/Models/Plane.js" beforeDir="false" afterPath="$PROJECT_DIR$/dist/Models/Plane.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/Models/Plane.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/dist/Models/Plane.js.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/Models/Plane.test.js" beforeDir="false" afterPath="$PROJECT_DIR$/dist/Models/Plane.test.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/Models/Plane.test.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/dist/Models/Plane.test.js.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/Views/TerminalRenderer.js" beforeDir="false" afterPath="$PROJECT_DIR$/dist/Views/TerminalRenderer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/Views/TerminalRenderer.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/dist/Views/TerminalRenderer.js.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/dist/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/index.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/dist/index.js.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Models/Lane.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/Models/Lane.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Models/Passenger.test.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/Models/Passenger.test.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Models/Passenger.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/Models/Passenger.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Models/PassengerFactory.test.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/Models/PassengerFactory.test.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Models/PassengerFactory.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/Models/PassengerFactory.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Models/PassengerQueue.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/Models/PassengerQueue.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Models/Plane.test.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/Models/Plane.test.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Models/Plane.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/Models/Plane.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Views/TerminalRenderer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/Views/TerminalRenderer.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Views/renderer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/Views/IRenderer.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/default.json" beforeDir="false" afterPath="$PROJECT_DIR$/default.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/Config.js" beforeDir="false" afterPath="$PROJECT_DIR$/dist/Config.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Config.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/Config.ts" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -68,8 +32,8 @@
           <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/index.ts">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="126">
-                  <caret line="6" selection-start-line="6" selection-end-line="6" />
+                <state relative-caret-position="588">
+                  <caret line="28" column="40" selection-start-line="28" selection-start-column="40" selection-end-line="28" selection-end-column="40" />
                   <folding>
                     <element signature="e#0#57#0" expanded="true" />
                   </folding>
@@ -77,11 +41,29 @@
               </provider>
             </entry>
           </file>
-          <file pinned="false" current-in-tab="true">
+          <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/Config.ts">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="230">
-                  <caret line="31" column="39" lean-forward="true" selection-start-line="31" selection-start-column="39" selection-end-line="31" selection-end-column="39" />
+                <state relative-caret-position="546">
+                  <caret line="38" column="59" selection-start-line="38" selection-start-column="59" selection-end-line="38" selection-end-column="59" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/frontToBack.json">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="168">
+                  <caret line="8" column="18" selection-start-line="8" selection-start-column="18" selection-end-line="8" selection-end-column="18" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/index.html">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="84">
+                  <caret line="4" column="36" selection-start-line="4" selection-start-column="36" selection-end-line="4" selection-end-column="36" />
                 </state>
               </provider>
             </entry>
@@ -89,22 +71,10 @@
           <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/Strategies/StrategyHelper.ts">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="378">
-                  <caret line="18" column="29" selection-start-line="18" selection-start-column="29" selection-end-line="18" selection-end-column="29" />
+                <state relative-caret-position="210">
+                  <caret line="10" column="28" selection-start-line="10" selection-start-column="28" selection-end-line="10" selection-end-column="28" />
                   <folding>
                     <element signature="e#0#54#0" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/Models/PassengerFactory.ts">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="280">
-                  <caret line="21" selection-start-line="21" selection-end-line="21" />
-                  <folding>
-                    <element signature="e#0#36#0" expanded="true" />
                   </folding>
                 </state>
               </provider>
@@ -167,18 +137,6 @@
               </provider>
             </entry>
           </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/Strategies/FrontToBack.ts">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="210">
-                  <caret line="10" selection-start-line="10" selection-end-line="10" />
-                  <folding>
-                    <element signature="e#0#54#0" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
         </leaf>
       </split-first>
       <split-second>
@@ -210,8 +168,8 @@
           <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/default.json">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="21">
-                  <caret line="1" selection-start-line="1" selection-end-line="1" />
+                <state relative-caret-position="168">
+                  <caret line="8" column="18" selection-start-line="8" selection-start-column="18" selection-end-line="8" selection-end-column="18" />
                 </state>
               </provider>
             </entry>
@@ -272,9 +230,11 @@
         <option value="$PROJECT_DIR$/src/Models/Plane.test.ts" />
         <option value="$PROJECT_DIR$/src/Models/Plane.ts" />
         <option value="$PROJECT_DIR$/simulation.config.json" />
-        <option value="$PROJECT_DIR$/src/Strategies/StrategyHelper.ts" />
         <option value="$PROJECT_DIR$/src/index.ts" />
+        <option value="$PROJECT_DIR$/src/Strategies/StrategyHelper.ts" />
         <option value="$PROJECT_DIR$/src/Config.ts" />
+        <option value="$PROJECT_DIR$/default.json" />
+        <option value="$PROJECT_DIR$/frontToBack.json" />
       </list>
     </option>
   </component>
@@ -299,11 +259,6 @@
             <path>
               <item name="boarding-simulation" type="b2602c69:ProjectViewProjectNode" />
               <item name="boarding-simulation" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="boarding-simulation" type="b2602c69:ProjectViewProjectNode" />
-              <item name="boarding-simulation" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -460,7 +415,7 @@
       <updated>1549330219189</updated>
       <workItem from="1549330221828" duration="13154000" />
       <workItem from="1549407602765" duration="5230000" />
-      <workItem from="1549548102612" duration="16919000" />
+      <workItem from="1549548102612" duration="17644000" />
     </task>
     <servers />
   </component>
@@ -497,29 +452,28 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="51915000" />
+    <option name="totallyTimeSpent" value="52640000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-1920" y="160" width="1920" height="1080" extended-state="0" />
-    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.497151" visible="true" weight="0.17518637" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.497151" visible="true" weight="0.17518637" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Gulp" order="2" side_tool="true" />
       <window_info id="Favorites" order="3" side_tool="true" />
       <window_info anchor="bottom" id="Quokka" order="0" />
       <window_info anchor="bottom" id="Message" order="1" />
-      <window_info anchor="bottom" id="Find" order="2" sideWeight="0.49946752" visible="true" weight="0.32970297" />
-      <window_info anchor="bottom" id="Run" order="3" sideWeight="0.5005325" side_tool="true" visible="true" weight="0.32970297" />
+      <window_info anchor="bottom" id="Find" order="2" sideWeight="0.49946752" weight="0.32970297" />
+      <window_info anchor="bottom" id="Run" order="3" sideWeight="0.50106496" side_tool="true" visible="true" weight="0.32970297" />
       <window_info anchor="bottom" id="Debug" order="4" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="5" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="6" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="7" />
       <window_info anchor="bottom" id="Docker" order="8" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" order="9" sideWeight="0.49946752" weight="0.32970297" />
+      <window_info active="true" anchor="bottom" id="Version Control" order="9" sideWeight="0.49893504" visible="true" weight="0.32970297" />
       <window_info anchor="bottom" id="Database Changes" order="10" />
       <window_info anchor="bottom" id="TypeScript" order="11" sideWeight="0.4987715" weight="0.32969433" />
-      <window_info anchor="bottom" id="Terminal" order="12" sideWeight="0.3599574" weight="0.29504952" />
+      <window_info anchor="bottom" id="Terminal" order="12" sideWeight="0.35942492" weight="0.29504952" />
       <window_info anchor="bottom" id="npm" order="13" sideWeight="0.6400426" side_tool="true" weight="0.29504952" />
       <window_info anchor="bottom" id="Event Log" order="14" side_tool="true" />
       <window_info anchor="bottom" id="Coverage" order="15" sideWeight="0.3887114" weight="0.2980198" />
@@ -534,13 +488,6 @@
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/index.html" />
-    <entry file="file://$PROJECT_DIR$/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="96">
-          <caret line="4" column="36" selection-start-line="4" selection-start-column="36" selection-end-line="4" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/index.js" />
     <entry file="file://$PROJECT_DIR$/src/utility/random.ts">
       <provider selected="true" editor-type-id="text-editor">
@@ -730,35 +677,49 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Strategies/StrategyHelper.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="378">
-          <caret line="18" column="29" selection-start-line="18" selection-start-column="29" selection-end-line="18" selection-end-column="29" />
+        <state relative-caret-position="210">
+          <caret line="10" column="28" selection-start-line="10" selection-start-column="28" selection-end-line="10" selection-end-column="28" />
           <folding>
             <element signature="e#0#54#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/default.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="21">
-          <caret line="1" selection-start-line="1" selection-end-line="1" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/index.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="126">
-          <caret line="6" selection-start-line="6" selection-end-line="6" />
+        <state relative-caret-position="588">
+          <caret line="28" column="40" selection-start-line="28" selection-start-column="40" selection-end-line="28" selection-end-column="40" />
           <folding>
             <element signature="e#0#57#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="84">
+          <caret line="4" column="36" selection-start-line="4" selection-start-column="36" selection-end-line="4" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/Config.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="230">
-          <caret line="31" column="39" lean-forward="true" selection-start-line="31" selection-start-column="39" selection-end-line="31" selection-end-column="39" />
+        <state relative-caret-position="546">
+          <caret line="38" column="59" selection-start-line="38" selection-start-column="59" selection-end-line="38" selection-end-column="59" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/default.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="168">
+          <caret line="8" column="18" selection-start-line="8" selection-start-column="18" selection-end-line="8" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontToBack.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="168">
+          <caret line="8" column="18" selection-start-line="8" selection-start-column="18" selection-end-line="8" selection-end-column="18" />
         </state>
       </provider>
     </entry>
