@@ -34,7 +34,7 @@ class Lane {
             throw `Cannot move ${newOccupant.assignedSeat.seatLabel} into lane ${row}. Occupied by ${this.getRow(row)}`;
         }
 
-        // TODO: Who's responsibility is it to move the passenger's position?
+        // TODO: Create external "Join table" structure to hold Passenger + Seat relationship
 
         // unset the last position of the passenger
         if (typeof newOccupant.currentPosition === "number") {

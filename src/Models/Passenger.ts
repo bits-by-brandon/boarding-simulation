@@ -169,7 +169,7 @@ class Passenger {
             return false
         }
 
-        // TODO: Who's responsibility to update the lane when a passenger sits?
+        // TODO: Create external "Join table" structure to hold Passenger + Seat relationship
         if (typeof this._currentPosition === "number") {
             this._plane.setLaneRow(this._currentPosition, null);
         }
@@ -202,8 +202,7 @@ class Passenger {
     }
 
     move(nextRow: number): void {
-        // TODO: is this single responsibility? Who owns updating the position
-        //  of the Passenger in the lane?
+        // TODO: Create external "Join table" structure to hold Passenger + Seat relationship
 
         console.log(`passenger ${this._assignedSeat.seatLabel} is moving to ${nextRow}`);
         this._status = 'move';

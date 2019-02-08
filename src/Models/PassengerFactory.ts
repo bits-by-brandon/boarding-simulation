@@ -43,6 +43,7 @@ class PassengerFactory {
         return passenger;
     }
 
+
     constructor(plane: Plane) {
         this._plane = plane;
     }

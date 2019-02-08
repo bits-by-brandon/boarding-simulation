@@ -18,6 +18,7 @@ class TerminalRenderer implements IRenderer {
     }
 
     public render(): string {
+        // TODO: Refactor to use repl module
         console.clear();
 
         const frameLines = [];
