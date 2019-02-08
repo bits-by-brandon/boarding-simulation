@@ -4,7 +4,7 @@ import Passenger from "./Passenger";
 import PassengerQueue from "./PassengerQueue";
 
 class Plane {
-    private _queue: PassengerQueue;
+    private readonly _queue: PassengerQueue;
 
     private readonly _rows: number;
 
@@ -14,7 +14,7 @@ class Plane {
 
     private readonly _seats: Seat[];
 
-    private _lane: Lane;
+    private readonly _lane: Lane;
 
     constructor(queue: PassengerQueue, rows: number, columnsPerSide: number, boardingGroups: number) {
         this._queue = queue;
@@ -66,8 +66,20 @@ class Plane {
         return this._lane.setRow(occupant, row);
     }
 
-    getSeat(row: number, column: number) {
+    getSeat(row: number, column: number): Seat {
         return this._seats.find(seat => (seat.row === row && seat.column === column));
+    }
+
+    getSeatSide(seat: Seat): string {
+        return (seat.column < (this._columns / 2)) ? 'left' : 'right';
+    }
+
+    getSeatsInRow(row: number): Seat[] {
+        let seats = [];
+        for (let c = 0; c < this.columns; c++) {
+            seats.push(this.getSeat(row, c));
+        }
+        return seats;
     }
 
     getBoardingGroup(groupNumber: number): Seat[] {
@@ -80,7 +92,7 @@ class Plane {
             .map(rowIndex => this._lane.getRow(parseInt(rowIndex)))
             .filter(objectAtRow => objectAtRow !== null)
             .forEach(passengerAtRow => {
-                passengerAtRow.step();
+                passengerAtRow.update();
             });
 
         // If the first spot on the plane is available

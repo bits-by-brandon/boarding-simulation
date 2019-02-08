@@ -5,6 +5,8 @@
   "boardingGroups": 4,
   "fps": 20,
   "stepsPerBag": 5,
+  "bagMin": 0,
+  "bagMax": 3,
   "seatShufflePenalty": 5,
   "sortStrategyName": "backToFront",
   "showRowNumbers": true,

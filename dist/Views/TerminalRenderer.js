@@ -68,7 +68,7 @@ class TerminalRenderer {
         for (let r = 0; r < Object.keys(lane.rows).length; r++) {
             const passengerInRow = lane.getRow(r);
             if (passengerInRow !== null) {
-                output += ` ${this.renderPassenger(passengerInRow)}  `;
+                output += this.renderPassenger(passengerInRow);
             }
             else {
                 output += '    ';
@@ -102,14 +102,17 @@ class TerminalRenderer {
         return output;
     }
     renderPassenger(passenger) {
+        const direction = this._plane.getSeatSide(passenger.assignedSeat) === 'left' ? '↑' : '↓';
         switch (passenger.status) {
             case 'stowing':
-                return '#';
+                return ' ' + passenger.baggageCount.toString() + direction + ' ';
+            case 'shuffling':
+                return ` X${direction} `;
             case 'moving':
             case 'waiting':
             case 'sitting':
             default:
-                return 'O';
+                return ' ' + passenger.baggageCount.toString() + '  ';
         }
     }
 }

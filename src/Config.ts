@@ -3,18 +3,20 @@ import fs = require('fs');
 class Config {
     private static instance: Config;
 
-    readonly passengerCount: number = 80;
-    readonly rows: number = 12;
-    readonly columnsPerSide: number = 3;
-    readonly boardingGroups: number = 4;
-    readonly fps: number = 10;
-    readonly stepsPerBag: number = 5;
-    readonly seatShufflePenalty: number = 5;
-    readonly sortStrategyName: string = "backToFront";
-    readonly showRowNumbers: boolean = true;
-    readonly showColumnNumbers: boolean = true;
-    readonly showBoardingGroups: boolean = true;
-    readonly showLog: boolean = true;
+    readonly passengerCount: number;
+    readonly rows: number;
+    readonly columnsPerSide: number;
+    readonly boardingGroups: number;
+    readonly fps: number;
+    readonly stepsPerBag: number;
+    readonly bagMin: number;
+    readonly bagMax: number;
+    readonly seatShufflePenalty: number;
+    readonly sortStrategyName: string;
+    readonly showRowNumbers: boolean;
+    readonly showColumnNumbers: boolean;
+    readonly showBoardingGroups: boolean;
+    readonly showLog: boolean;
 
     constructor(configPath: string = __dirname + '/../default.json') {
         const defaultConfigPath = __dirname + '/../default.json';
@@ -35,6 +37,8 @@ class Config {
         this.boardingGroups = configJson['boardingGroups'];
         this.fps = configJson['fps'];
         this.stepsPerBag = configJson['stepsPerBag'];
+        this.bagMin = configJson['bagMin'];
+        this.bagMax = configJson['bagMax'];
         this.seatShufflePenalty = configJson['seatShufflePenalty'];
         this.sortStrategyName = configJson['sortStrategyName'];
         this.showRowNumbers = configJson['showRowNumbers'];

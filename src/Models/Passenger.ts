@@ -1,5 +1,14 @@
 import Plane from "./Plane";
 import Seat from "./Seat";
+import Config from "../Config";
+
+const config = Config.getInstance();
+
+interface Task {
+    time: number,
+    title: string,
+    callback: () => void;
+}
 
 class Passenger {
     private _plane: Plane;
@@ -12,12 +21,14 @@ class Passenger {
 
     private _status: string;
 
+    private _taskQueue: Task[];
+
     get currentPosition(): number | Seat | null {
         return this._currentPosition;
     }
 
     set currentPosition(newPosition: number | Seat | null) {
-        if(typeof this._currentPosition === "number") {
+        if (typeof this._currentPosition === "number") {
             this._plane.setLaneRow(this._currentPosition, null);
         }
         this._currentPosition = newPosition;
@@ -61,6 +72,7 @@ class Passenger {
         this._currentPosition = currentPosition;
         this._baggageCount = baggageCount;
         this._plane = plane;
+        this._taskQueue = [];
     }
 
     init(): void {
@@ -70,65 +82,135 @@ class Passenger {
         }
     }
 
-    step() {
+    update() {
+        // Perform any tasks that are in progress first
+        if (this._taskQueue.length > 0) {
+            this.performTask();
+            return
+        }
+
+        // If no tasks are in process, assign new tasks to the queue
+        this.queueTasks();
+
+        // Begin performing any new tasks
+        if (this._taskQueue.length > 0) {
+            this.performTask();
+            return
+        }
+    }
+
+    queueTasks(): void {
         if (this._assignedSeat === this._currentPosition) {
             return
         }
 
-        if(this.currentPosition === this._assignedSeat.row) {
+        // If passenger is in the row of the assigned seat
+        if (this.currentPosition === this._assignedSeat.row) {
 
             // Check if any baggage needs to be stowed
-            if(this._baggageCount > 0) {
-                //TODO: implement logging utility
-                // console.log(`passenger ${this._assignedSeat.seatLabel} is stowing`);
-
-                // spend the step cycle stowing baggage
-                this._baggageCount--;
-                this._status = 'stowing';
-
+            if (this._baggageCount > 0) {
+                this.queueStowBag();
                 return
             }
-            this.sit(this._assignedSeat);
+
+            this.queueSit(this._assignedSeat);
             return
         }
 
-
         if (typeof this._currentPosition === 'number'
             && this._plane.getLaneRow(this._currentPosition + 1) === null) {
-
-            const nextRow = this._currentPosition + 1;
-            // TODO: is this single responsibility? Who owns updating the position
-            //  of the Passenger in the lane?
-
-            console.log(`passenger ${this._assignedSeat.seatLabel} is moving to ${nextRow}`);
-            this._status = 'moving';
-
-            this._plane.setLaneRow(nextRow, this);
-            this._currentPosition = nextRow;
-
+            this.queueMove();
             return
         }
 
         this._status = 'waiting';
-        console.log(`passenger ${this._assignedSeat.seatLabel} is waiting`);
     }
 
-    sit(seat: Seat): boolean {
-        if (seat.occupied !== null) {
+    performTask(): void {
+        //TODO: implement logging utility
+        const task = this._taskQueue[0];
+        task.time--;
+        this._status = task.title;
+        if(task.time <= 0) {
+            this._taskQueue.shift();
+            task.callback();
+        }
+    }
+
+    queueSit(targetSeat: Seat) {
+        if (targetSeat.occupied !== null) {
+            return false
+        }
+
+        const blockingSeats: Seat[] = this._plane.getSeatsInRow(targetSeat.row)
+            // Filter by occupied seats
+            .filter(seat => seat.occupied !== null)
+            // Filter all seats between the row and the destination seat
+            .filter(seat => {
+                if(this._plane.getSeatSide(targetSeat) === 'left') {
+                    return seat.column > this._assignedSeat.column && seat.column < (this._plane.columns / 2)
+                } else {
+                    return seat.column < this._assignedSeat.column && seat.column >= (this._plane.columns / 2)
+                }
+            });
+
+        this._taskQueue.push({
+            time: blockingSeats.length * config.seatShufflePenalty,
+            title: 'shuffling',
+            callback: () => {
+                this.sit(this._assignedSeat);
+            }
+        });
+
+    }
+
+    sit(targetSeat: Seat): boolean {
+        if (targetSeat.occupied !== null) {
             return false
         }
 
         // TODO: Who's responsibility to update the lane when a passenger sits?
-        if(typeof this._currentPosition === "number") {
+        if (typeof this._currentPosition === "number") {
             this._plane.setLaneRow(this._currentPosition, null);
         }
 
-        seat.occupied = this;
-        this._currentPosition = seat;
         this._status = 'seated';
-        return true
+        targetSeat.occupied = this;
+        this._currentPosition = targetSeat;
+        return true;
     }
 
+    queueStowBag(): void {
+        this._taskQueue.push({
+            time: config.stepsPerBag,
+            title: 'stowing',
+            callback: () => {
+                this._baggageCount--;
+            }
+        });
+    }
+
+    queueMove(): void {
+        if(typeof this._currentPosition === 'number'){
+            const nextRow = this._currentPosition + 1;
+            this._taskQueue.push({
+                time: 1,
+                title: 'moving',
+                callback: () => this.move(nextRow)
+            });
+        }
+    }
+
+    move(nextRow: number): void {
+        // TODO: is this single responsibility? Who owns updating the position
+        //  of the Passenger in the lane?
+
+        console.log(`passenger ${this._assignedSeat.seatLabel} is moving to ${nextRow}`);
+        this._status = 'move';
+
+        this._plane.setLaneRow(nextRow, this);
+        this._currentPosition = nextRow;
+    }
 }
 
 export default Passenger;

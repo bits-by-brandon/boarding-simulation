@@ -50,3 +50,4 @@ it('takes a step', () => {
 
     expect(passenger.assignedSeat).toBe(seat1);
 });
+

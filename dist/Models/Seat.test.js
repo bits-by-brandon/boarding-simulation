@@ -2,6 +2,16 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 const Seat_1 = require("./Seat");
 const Passenger_1 = require("./Passenger");
+const PassengerQueue_1 = require("./PassengerQueue");
+const Plane_1 = require("./Plane");
+const PassengerFactory_1 = require("./PassengerFactory");
+let globalPlane;
+let globalFactory;
+beforeEach(() => {
+    const queue = new PassengerQueue_1.default();
+    globalPlane = new Plane_1.default(queue, 4, 2, 1);
+    globalFactory = new PassengerFactory_1.default(globalPlane);
+});
 it('initializes a seat with correct values', () => {
     const seat = new Seat_1.default(1, 2, 1);
     expect(seat.row).toEqual(1);
@@ -12,8 +22,9 @@ it('returns the correct seat label', () => {
     expect(seat.seatLabel).toEqual('3-E');
 });
 it('returns information about its occupied state', () => {
-    const seat = new Seat_1.default(2, 4, 1);
-    const passenger = new Passenger_1.default(null, seat, 1, null);
+    globalPlane.reset();
+    const seat = globalPlane.getSeat(1, 2);
+    const passenger = globalFactory.buildPassenger(seat);
     expect(seat.occupied).toBeNull();
     passenger.sit(seat);
     expect(seat.occupied).toBe(passenger);

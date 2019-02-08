@@ -3,18 +3,6 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const fs = require("fs");
 class Config {
     constructor(configPath = __dirname + '/../default.json') {
-        this.passengerCount = 80;
-        this.rows = 12;
-        this.columnsPerSide = 3;
-        this.boardingGroups = 4;
-        this.fps = 10;
-        this.stepsPerBag = 5;
-        this.seatShufflePenalty = 5;
-        this.sortStrategyName = "backToFront";
-        this.showRowNumbers = true;
-        this.showColumnNumbers = true;
-        this.showBoardingGroups = true;
-        this.showLog = true;
         const defaultConfigPath = __dirname + '/../default.json';
         let configJson;
         try {
@@ -31,6 +19,8 @@ class Config {
         this.boardingGroups = configJson['boardingGroups'];
         this.fps = configJson['fps'];
         this.stepsPerBag = configJson['stepsPerBag'];
+        this.bagMin = configJson['bagMin'];
+        this.bagMax = configJson['bagMax'];
         this.seatShufflePenalty = configJson['seatShufflePenalty'];
         this.sortStrategyName = configJson['sortStrategyName'];
         this.showRowNumbers = configJson['showRowNumbers'];

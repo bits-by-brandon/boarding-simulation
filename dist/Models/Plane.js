@@ -45,6 +45,16 @@ class Plane {
     getSeat(row, column) {
         return this._seats.find(seat => (seat.row === row && seat.column === column));
     }
+    getSeatSide(seat) {
+        return (seat.column < (this._columns / 2)) ? 'left' : 'right';
+    }
+    getSeatsInRow(row) {
+        let seats = [];
+        for (let c = 0; c < this.columns; c++) {
+            seats.push(this.getSeat(row, c));
+        }
+        return seats;
+    }
     getBoardingGroup(groupNumber) {
         return this._seats.filter(seat => seat.boardingGroup === groupNumber);
     }
@@ -53,7 +63,7 @@ class Plane {
             .map(rowIndex => this._lane.getRow(parseInt(rowIndex)))
             .filter(objectAtRow => objectAtRow !== null)
             .forEach(passengerAtRow => {
-            passengerAtRow.step();
+            passengerAtRow.update();
         });
         if (this._lane.getRow(0) === null) {
             if (this._queue.length > 0) {

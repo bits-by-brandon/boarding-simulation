@@ -2,6 +2,9 @@ import Passenger from "./Passenger";
 import Seat from "./Seat";
 import random from "../utility/random";
 import Plane from "./Plane";
+import Config from "../Config";
+
+const config = Config.getInstance();
 
 class PassengerFactory {
 
@@ -16,7 +19,7 @@ class PassengerFactory {
         }
 
         // Randomize the number of bags
-        const numberOfBags = bags || random(1, 10);
+        const numberOfBags = bags || random(config.bagMin, config.bagMax);
 
         let assignedSeat: Seat | null = null;
 

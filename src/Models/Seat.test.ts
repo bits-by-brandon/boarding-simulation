@@ -1,5 +1,17 @@
 import Seat from "./Seat";
 import Passenger from "./Passenger";
+import PassengerQueue from "./PassengerQueue";
+import Plane from "./Plane";
+import PassengerFactory from "./PassengerFactory";
+
+let globalPlane: Plane;
+let globalFactory: PassengerFactory;
+
+beforeEach(() => {
+    const queue = new PassengerQueue();
+    globalPlane = new Plane(queue, 4, 2, 1);
+    globalFactory = new PassengerFactory(globalPlane);
+});
 
 it('initializes a seat with correct values', () => {
     const seat = new Seat(1, 2, 1);
@@ -15,8 +27,9 @@ it('returns the correct seat label', () => {
 });
 
 it('returns information about its occupied state', () => {
-    const seat = new Seat(2, 4, 1);
-    const passenger = new Passenger(null, seat, 1, null);
+    globalPlane.reset();
+    const seat = globalPlane.getSeat(1, 2);
+    const passenger = globalFactory.buildPassenger(seat);
 
     expect(seat.occupied).toBeNull();
 
