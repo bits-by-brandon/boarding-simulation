@@ -27,6 +27,7 @@ class Config {
         this.showColumnNumbers = configJson['showColumnNumbers'];
         this.showBoardingGroups = configJson['showBoardingGroups'];
         this.showLog = configJson['showLog'];
+        this.animate = configJson['animate'];
     }
     static getInstance() {
         if (!Config.instance) {

@@ -204,7 +204,8 @@ class Passenger {
     move(nextRow: number): void {
         // TODO: Create external "Join table" structure to hold Passenger + Seat relationship
 
-        console.log(`passenger ${this._assignedSeat.seatLabel} is moving to ${nextRow}`);
+        // TODO: debugging utility
+        // console.log(`passenger ${this._assignedSeat.seatLabel} is moving to ${nextRow}`);
         this._status = 'move';
 
         this._plane.setLaneRow(nextRow, this);

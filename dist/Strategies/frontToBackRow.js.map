@@ -1,0 +1,1 @@
+{"version":3,"file":"frontToBackRow.js","sourceRoot":"","sources":["../../src/Strategies/frontToBackRow.ts"],"names":[],"mappings":";;AAGA,MAAM,cAAc,GAAmB,CAAC,UAAuB,EAAe,EAAE;IAC5E,OAAO,UAAU,CAAC,IAAI,CAAC,CAAC,CAAC,EAAE,CAAC,EAAE,EAAE,CAAC,CAAC,CAAC,YAAY,CAAC,GAAG,GAAG,CAAC,CAAC,YAAY,CAAC,GAAG,CAAC,CAAA;AAC7E,CAAC,CAAC;AAEF,kBAAe,cAAc,CAAC"}

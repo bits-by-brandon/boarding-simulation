@@ -135,7 +135,6 @@ class Passenger {
         }
     }
     move(nextRow) {
-        console.log(`passenger ${this._assignedSeat.seatLabel} is moving to ${nextRow}`);
         this._status = 'move';
         this._plane.setLaneRow(nextRow, this);
         this._currentPosition = nextRow;

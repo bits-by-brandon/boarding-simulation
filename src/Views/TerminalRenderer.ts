@@ -5,6 +5,7 @@ import Lane from "../Models/Lane";
 import PassengerQueue from "../Models/PassengerQueue";
 import Config from "../Config";
 import Passenger from "../Models/Passenger";
+import readline = require("readline");
 
 const config = Config.getInstance();
 
@@ -12,19 +13,17 @@ class TerminalRenderer implements IRenderer {
 
     private _plane: Plane;
     private _stepCount: number;
+    private _cursorPos: { x: number, y: number };
 
     public update() {
         this._plane.update();
     }
 
     public render(): string {
-        // TODO: Refactor to use repl module
-        console.clear();
-
-        const frameLines = [];
+        let frame= '';
 
         if (config.showRowNumbers) {
-            frameLines.push(TerminalRenderer.renderRowNumbers(this._plane.rows));
+            frame += TerminalRenderer.renderRowNumbers(this._plane.rows);
         }
 
         // Render each line
@@ -32,7 +31,7 @@ class TerminalRenderer implements IRenderer {
 
             // Render the lane halfway through the columns
             if (c === this._plane.columns / 2) {
-                frameLines.push(this.renderLane(this._plane.lane));
+                frame += this.renderLane(this._plane.lane);
             }
 
             let column: string = '';
@@ -46,22 +45,22 @@ class TerminalRenderer implements IRenderer {
                 const seat = this._plane.getSeat(r, c);
                 column += TerminalRenderer.renderSeat(seat);
             }
-            frameLines.push(column);
+            frame += column + '\n';
         }
 
-        frameLines.push(this.renderQueue(this._plane.queue));
+        frame += '\n';
 
-        frameLines.push(this.renderStats());
+        frame += this.renderStats();
 
-        const frame = frameLines.reduce((lines, line) => lines.concat(line + '\n'), '');
-
-        console.log(frame);
+        frame += this.renderQueue(this._plane.queue);
 
         if (this._plane.queue.length === 0 && this._plane.lane.occupied === 0) {
-            console.log(`Finished boarding in ${this._stepCount} steps!`);
+            frame += `\nFinished boarding in ${this._stepCount} steps`;
         } else {
             this._stepCount++;
         }
+
+        this.renderScreen(frame);
 
         return frame;
     };
@@ -69,6 +68,20 @@ class TerminalRenderer implements IRenderer {
     constructor(plane: Plane) {
         this._plane = plane;
         this._stepCount = 0;
+        this._cursorPos = {x: 0, y: 0};
+
+        console.clear();
+    }
+
+    renderScreen(frame: string): void {
+        const lines = frame.split('\n');
+        for (let i = 0; i < lines.length; i++) {
+            readline.cursorTo(process.stdout, 0, i);
+            process.stdout.write(lines[i]);
+        }
+
+        readline.clearScreenDown(process.stdout);
+        readline.cursorTo(process.stdout, this._cursorPos.x, this._cursorPos.y);
     }
 
     static renderSeat(seat: Seat): string {
@@ -89,7 +102,7 @@ class TerminalRenderer implements IRenderer {
             }
             output += ' ' + (r + 1) + ' ';
         }
-        return output;
+        return output + '\n';
     }
 
     renderLane(lane: Lane): string {
@@ -101,14 +114,14 @@ class TerminalRenderer implements IRenderer {
 
         for (let r = 0; r < Object.keys(lane.rows).length; r++) {
             const passengerInRow = lane.getRow(r);
-            if(passengerInRow !== null) {
+            if (passengerInRow !== null) {
                 output += this.renderPassenger(passengerInRow);
             } else {
                 output += '    ';
             }
         }
 
-        return output
+        return output + '\n';
     }
 
     renderQueue(queue: PassengerQueue): string {
@@ -118,7 +131,7 @@ class TerminalRenderer implements IRenderer {
             output += '   ';
         }
 
-        output += `Queue: ${queue.length}`;
+        output += `queue: ${queue.length}`;
 
         for (let r = 0; r < queue.length; r++) {
             if (r % (this._plane.rows * 2) === 0) {
@@ -135,11 +148,14 @@ class TerminalRenderer implements IRenderer {
     }
 
     renderStats(): string {
-        let output = '\n';
+        let output = '';
         if (config.showColumnNumbers) {
             output += '   ';
         }
         output += `steps: ${this._stepCount}`;
+        output += `\t`;
+        output += `x: ${this._cursorPos.x}, y: ${this._cursorPos.y}`;
+        output += '\n';
         return output;
     }
 

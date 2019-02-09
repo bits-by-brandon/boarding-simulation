@@ -1,17 +1,35 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-const Random_1 = require("./Random");
-const FrontToBack_1 = require("./FrontToBack");
-const BackToFront_1 = require("./BackToFront");
+const random_1 = require("./random");
+const frontToBack_1 = require("./frontToBack");
+const backToFront_1 = require("./backToFront");
+const windowToIsle_1 = require("./windowToIsle");
+const perfect_1 = require("./perfect");
+const backToFrontRow_1 = require("./backToFrontRow");
+const bySide_1 = require("./bySide");
+const frontToBackRow_1 = require("./frontToBackRow");
+const slowest_1 = require("./slowest");
 class StrategyHelper {
     static getStrategy(strategyName) {
         switch (strategyName) {
             case 'backToFront':
-                return BackToFront_1.default;
+                return backToFront_1.default;
             case 'frontToBack':
-                return FrontToBack_1.default;
+                return frontToBack_1.default;
+            case 'windowToIsle':
+                return windowToIsle_1.default;
+            case 'backToFrontRow':
+                return backToFrontRow_1.default;
+            case 'frontToBackRow':
+                return frontToBackRow_1.default;
+            case 'perfect':
+                return perfect_1.default;
+            case 'slowest':
+                return slowest_1.default;
+            case 'bySide':
+                return bySide_1.default;
             default:
-                return Random_1.default;
+                return random_1.default;
         }
     }
 }

@@ -1,20 +1,20 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 const Config_1 = require("../Config");
+const readline = require("readline");
 const config = Config_1.default.getInstance();
 class TerminalRenderer {
     update() {
         this._plane.update();
     }
     render() {
-        console.clear();
-        const frameLines = [];
+        let frame = '';
         if (config.showRowNumbers) {
-            frameLines.push(TerminalRenderer.renderRowNumbers(this._plane.rows));
+            frame += TerminalRenderer.renderRowNumbers(this._plane.rows);
         }
         for (let c = 0; c < this._plane.columns; c++) {
             if (c === this._plane.columns / 2) {
-                frameLines.push(this.renderLane(this._plane.lane));
+                frame += this.renderLane(this._plane.lane);
             }
             let column = '';
             if (config.showColumnNumbers) {
@@ -24,24 +24,35 @@ class TerminalRenderer {
                 const seat = this._plane.getSeat(r, c);
                 column += TerminalRenderer.renderSeat(seat);
             }
-            frameLines.push(column);
+            frame += column + '\n';
         }
-        frameLines.push(this.renderQueue(this._plane.queue));
-        frameLines.push(this.renderStats());
-        const frame = frameLines.reduce((lines, line) => lines.concat(line + '\n'), '');
-        console.log(frame);
+        frame += '\n';
+        frame += this.renderStats();
+        frame += this.renderQueue(this._plane.queue);
         if (this._plane.queue.length === 0 && this._plane.lane.occupied === 0) {
-            console.log(`Finished boarding in ${this._stepCount} steps!`);
+            frame += `\nFinished boarding in ${this._stepCount} steps`;
         }
         else {
             this._stepCount++;
         }
+        this.renderScreen(frame);
         return frame;
     }
     ;
     constructor(plane) {
         this._plane = plane;
         this._stepCount = 0;
+        this._cursorPos = { x: 0, y: 0 };
+        console.clear();
+    }
+    renderScreen(frame) {
+        const lines = frame.split('\n');
+        for (let i = 0; i < lines.length; i++) {
+            readline.cursorTo(process.stdout, 0, i);
+            process.stdout.write(lines[i]);
+        }
+        readline.clearScreenDown(process.stdout);
+        readline.cursorTo(process.stdout, this._cursorPos.x, this._cursorPos.y);
     }
     static renderSeat(seat) {
         const token = seat.occupied !== null ? 'X' : ' ';
@@ -58,7 +69,7 @@ class TerminalRenderer {
             }
             output += ' ' + (r + 1) + ' ';
         }
-        return output;
+        return output + '\n';
     }
     renderLane(lane) {
         let output = ' ';
@@ -74,14 +85,14 @@ class TerminalRenderer {
                 output += '    ';
             }
         }
-        return output;
+        return output + '\n';
     }
     renderQueue(queue) {
         let output = '\n';
         if (config.showColumnNumbers) {
             output += '   ';
         }
-        output += `Queue: ${queue.length}`;
+        output += `queue: ${queue.length}`;
         for (let r = 0; r < queue.length; r++) {
             if (r % (this._plane.rows * 2) === 0) {
                 output += '\n';
@@ -94,11 +105,14 @@ class TerminalRenderer {
         return output;
     }
     renderStats() {
-        let output = '\n';
+        let output = '';
         if (config.showColumnNumbers) {
             output += '   ';
         }
         output += `steps: ${this._stepCount}`;
+        output += `\t`;
+        output += `x: ${this._cursorPos.x}, y: ${this._cursorPos.y}`;
+        output += '\n';
         return output;
     }
     renderPassenger(passenger) {
