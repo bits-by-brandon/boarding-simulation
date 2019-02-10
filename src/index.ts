@@ -4,35 +4,59 @@ import TerminalRenderer from "./Views/TerminalRenderer";
 import PassengerQueue from "./Models/PassengerQueue";
 import StrategyHelper from "./Strategies/StrategyHelper";
 import Config from './Config';
+import QuickRender from "./Views/QuickRender";
+import IRenderer from "./Views/IRenderer";
 
 const config = Config.getInstance();
 
-// Create the queue
-const passengerQueue: PassengerQueue = new PassengerQueue();
+async function runSimulation() {
+    // Create the queue
+    const passengerQueue: PassengerQueue = new PassengerQueue();
 
-// Construct our plane
-const plane = new Plane(passengerQueue, config.rows, config.columnsPerSide, config.boardingGroups);
+    // Construct our plane
+    const plane = new Plane(passengerQueue, config.rows, config.columnsPerSide, config.boardingGroups);
 
-// Prepare the passenger factory
-const passengerFactory: PassengerFactory = new PassengerFactory(plane);
+    // Prepare the passenger factory
+    const passengerFactory: PassengerFactory = new PassengerFactory(plane);
 
-try {
-    // Create passengers
-    for (let i = 0; i < config.passengerCount; i++) {
-        passengerQueue.add(passengerFactory.buildPassenger());
+    try {
+        // Create passengers
+        for (let i = 0; i < config.passengerCount; i++) {
+            passengerQueue.add(passengerFactory.buildPassenger());
+        }
+    } catch (e) {
+        console.error(e);
     }
-} catch (e) {
-    console.error(e);
+
+    // Sort the passengers by the given strategy
+    passengerQueue.sort(StrategyHelper.getStrategy(config.sortStrategyName));
+
+    let renderer: IRenderer;
+
+    if (config.animate) {
+        renderer = new TerminalRenderer(plane);
+    } else {
+        renderer = new QuickRender(plane);
+    }
+
+    return renderer.execute();
 }
 
-// Sort the passengers by the given strategy
-passengerQueue.sort(StrategyHelper.getStrategy(config.sortStrategyName));
+const main = async () => {
+    const simulations = [];
 
-const renderer = new TerminalRenderer(plane);
+    for (let i = 0; i < config.simulationRuns; i++) {
+        simulations.push(runSimulation())
+    }
 
-// Render engine
-setInterval(() => {
-    renderer.update();
-    renderer.render();
-}, 1000 / config.fps);
+    const simResults = await Promise.all(simulations);
+
+    const stepAverage = simResults.reduce((a, b) => a + b, 0) / simResults.length;
+
+    console.log(`sort used: ${config.sortStrategyName}`);
+    console.log(`simulations ran: ${config.simulationRuns}`);
+    console.log(`average steps: ${stepAverage}`);
+};
+
+main();
 

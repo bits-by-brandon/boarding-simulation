@@ -24,7 +24,7 @@ class PassengerFactory {
         let assignedSeat: Seat | null = null;
 
         if (seat === null) {
-            // Select a seat at perfect
+            // Select a seat at fastest
             assignedSeat = availableSeats[random(0, availableSeats.length - 1)];
 
         } else {

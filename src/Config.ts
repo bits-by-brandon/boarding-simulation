@@ -18,8 +18,9 @@ class Config {
     readonly showBoardingGroups: boolean;
     readonly showLog: boolean;
     readonly animate: boolean;
+    readonly simulationRuns: number;
 
-    constructor(configPath: string = __dirname + '/../default.json') {
+    constructor(configPath: string) {
         const defaultConfigPath = __dirname + '/../default.json';
 
         let configJson;
@@ -46,7 +47,8 @@ class Config {
         this.showColumnNumbers = configJson['showColumnNumbers'];
         this.showBoardingGroups = configJson['showBoardingGroups'];
         this.showLog = configJson['showLog'];
-        this.animate = configJson['animate'];
+        this.animate = typeof configJson['animate'] === 'boolean' ? configJson['animate'] : true;
+        this.simulationRuns = this.animate ? 1 : configJson['simulationRuns'];
     }
 
     static getInstance() {

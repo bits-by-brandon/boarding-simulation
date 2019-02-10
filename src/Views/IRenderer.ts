@@ -1,6 +1,7 @@
 interface IRenderer {
-    render(): string;
+    render(): void;
     update(): void;
+    execute(): Promise<number>;
 }
 
 export default IRenderer;

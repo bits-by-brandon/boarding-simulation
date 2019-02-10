@@ -6,6 +6,7 @@ import PassengerQueue from "../Models/PassengerQueue";
 import Config from "../Config";
 import Passenger from "../Models/Passenger";
 import readline = require("readline");
+import Timeout = NodeJS.Timeout;
 
 const config = Config.getInstance();
 
@@ -14,13 +15,35 @@ class TerminalRenderer implements IRenderer {
     private _plane: Plane;
     private _stepCount: number;
     private _cursorPos: { x: number, y: number };
+    private _isComplete: boolean;
+    private _setInterval: Timeout | null;
+
+    async execute(): Promise<number> {
+        const timeout = 1000 / config.fps;
+
+        this._setInterval = setInterval(() => {
+            this.update();
+
+            if(this._isComplete) {
+                clearInterval(this._setInterval);
+                return this._stepCount;
+            }
+
+            this.render();
+        }, timeout);
+
+        // Keep node alive
+        process.stdin.resume();
+
+        return this._stepCount;
+    }
 
     public update() {
         this._plane.update();
     }
 
     public render(): string {
-        let frame= '';
+        let frame = '';
 
         if (config.showRowNumbers) {
             frame += TerminalRenderer.renderRowNumbers(this._plane.rows);
@@ -56,6 +79,7 @@ class TerminalRenderer implements IRenderer {
 
         if (this._plane.queue.length === 0 && this._plane.lane.occupied === 0) {
             frame += `\nFinished boarding in ${this._stepCount} steps`;
+            this._isComplete = true;
         } else {
             this._stepCount++;
         }
@@ -69,6 +93,15 @@ class TerminalRenderer implements IRenderer {
         this._plane = plane;
         this._stepCount = 0;
         this._cursorPos = {x: 0, y: 0};
+        this._isComplete = false;
+        this._setInterval = null;
+
+        if(config.animate) {
+            process.on('exit', () => {
+                readline.moveCursor(process.stdout, 0, 0);
+                readline.clearScreenDown(process.stdout);
+            });
+        }
 
         console.clear();
     }

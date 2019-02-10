@@ -3,7 +3,7 @@ import random from "./random";
 import frontToBack from "./frontToBack";
 import backToFront from "./backToFront";
 import windowToIsle from "./windowToIsle";
-import perfect from "./perfect";
+import fastest from "./fastest";
 import backToFrontRow from "./backToFrontRow";
 import bySide from "./bySide";
 import frontToBackRow from "./frontToBackRow";
@@ -22,8 +22,8 @@ abstract class StrategyHelper {
                 return backToFrontRow;
             case 'frontToBackRow':
                 return frontToBackRow;
-            case 'perfect':
-                return perfect;
+            case 'fastest':
+                return fastest;
             case 'slowest':
                 return slowest;
             case 'bySide':

@@ -4,6 +4,19 @@ const Config_1 = require("../Config");
 const readline = require("readline");
 const config = Config_1.default.getInstance();
 class TerminalRenderer {
+    async execute() {
+        const timeout = 1000 / config.fps;
+        this._setInterval = setInterval(() => {
+            this.update();
+            if (this._isComplete) {
+                clearInterval(this._setInterval);
+                return this._stepCount;
+            }
+            this.render();
+        }, timeout);
+        process.stdin.resume();
+        return this._stepCount;
+    }
     update() {
         this._plane.update();
     }
@@ -31,6 +44,7 @@ class TerminalRenderer {
         frame += this.renderQueue(this._plane.queue);
         if (this._plane.queue.length === 0 && this._plane.lane.occupied === 0) {
             frame += `\nFinished boarding in ${this._stepCount} steps`;
+            this._isComplete = true;
         }
         else {
             this._stepCount++;
@@ -43,6 +57,14 @@ class TerminalRenderer {
         this._plane = plane;
         this._stepCount = 0;
         this._cursorPos = { x: 0, y: 0 };
+        this._isComplete = false;
+        this._setInterval = null;
+        if (config.animate) {
+            process.on('exit', () => {
+                readline.moveCursor(process.stdout, 0, 0);
+                readline.clearScreenDown(process.stdout);
+            });
+        }
         console.clear();
     }
     renderScreen(frame) {
