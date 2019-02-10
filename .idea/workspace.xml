@@ -2,26 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2c7a8e10-d95a-41ad-b462-4f72556de8f1" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/Strategies/alternatingRows.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Views/QuickRender.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/configs/custom.json" beforeDir="false" afterPath="$PROJECT_DIR$/configs/custom.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/Config.js" beforeDir="false" afterPath="$PROJECT_DIR$/dist/Config.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/Config.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/dist/Config.js.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/Strategies/StrategyHelper.js" beforeDir="false" afterPath="$PROJECT_DIR$/dist/Strategies/StrategyHelper.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dist/Views/TerminalRenderer.js" beforeDir="false" afterPath="$PROJECT_DIR$/dist/Views/TerminalRenderer.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dist/Views/TerminalRenderer.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/dist/Views/TerminalRenderer.js.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/dist/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/index.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/dist/index.js.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Config.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/Config.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Models/PassengerFactory.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/Models/PassengerFactory.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Strategies/perfect.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/Strategies/fastest.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Strategies/strategyHelper.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/Strategies/strategyHelper.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Views/IRenderer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/Views/IRenderer.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Views/TerminalRenderer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/Views/TerminalRenderer.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.ts" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -45,8 +30,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/index.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="291">
-              <caret line="55" column="24" selection-start-line="55" selection-start-column="24" selection-end-line="55" selection-end-column="24" />
+            <state relative-caret-position="135">
+              <caret line="31" column="51" selection-start-line="31" selection-start-column="51" selection-end-line="31" selection-end-column="51" />
               <folding>
                 <element signature="e#0#57#0" expanded="true" />
               </folding>
@@ -57,8 +42,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/configs/custom.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="120">
-              <caret line="5" column="10" selection-start-line="5" selection-start-column="10" selection-end-line="5" selection-end-column="10" />
+            <state relative-caret-position="264">
+              <caret line="11" column="24" selection-start-line="11" selection-start-column="24" selection-end-line="11" selection-end-column="24" />
             </state>
           </provider>
         </entry>
@@ -66,8 +51,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Views/TerminalRenderer.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="423">
-              <caret line="34" column="19" selection-start-line="34" selection-start-column="19" selection-end-line="34" selection-end-column="19" />
+            <state relative-caret-position="404">
+              <caret line="31" column="52" selection-start-line="31" selection-start-column="52" selection-end-line="31" selection-end-column="52" />
               <folding>
                 <element signature="e#0#36#0" expanded="true" />
               </folding>
@@ -132,8 +117,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Config.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="312">
-              <caret line="50" column="41" selection-start-line="50" selection-start-column="41" selection-end-line="50" selection-end-column="41" />
+            <state relative-caret-position="336">
+              <caret line="51" column="4" selection-start-line="51" selection-start-column="4" selection-end-line="51" selection-end-column="4" />
             </state>
           </provider>
         </entry>
@@ -221,13 +206,13 @@
         <option value="$PROJECT_DIR$/src/Strategies/strategyHelper.ts" />
         <option value="$PROJECT_DIR$/src/Strategies/alternatingRows.js" />
         <option value="$PROJECT_DIR$/src/Strategies/alternatingRows.ts" />
-        <option value="$PROJECT_DIR$/src/Config.ts" />
         <option value="$PROJECT_DIR$/src/Views/IRenderer.ts" />
         <option value="$PROJECT_DIR$/src/Views/QuickRender.ts" />
         <option value="$PROJECT_DIR$/src/Strategies/fastest.ts" />
-        <option value="$PROJECT_DIR$/configs/custom.json" />
-        <option value="$PROJECT_DIR$/src/Views/TerminalRenderer.ts" />
         <option value="$PROJECT_DIR$/src/index.ts" />
+        <option value="$PROJECT_DIR$/src/Config.ts" />
+        <option value="$PROJECT_DIR$/src/Views/TerminalRenderer.ts" />
+        <option value="$PROJECT_DIR$/configs/custom.json" />
       </list>
     </option>
   </component>
@@ -428,7 +413,7 @@
       <workItem from="1549330221828" duration="13154000" />
       <workItem from="1549407602765" duration="5230000" />
       <workItem from="1549548102612" duration="39107000" />
-      <workItem from="1549744862425" duration="21181000" />
+      <workItem from="1549744862425" duration="22232000" />
     </task>
     <servers />
   </component>
@@ -465,7 +450,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="95284000" />
+    <option name="totallyTimeSpent" value="96335000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -487,7 +472,7 @@
       <window_info anchor="bottom" id="Quokka" order="0" />
       <window_info anchor="bottom" id="Message" order="1" />
       <window_info anchor="bottom" id="Find" order="2" sideWeight="0.49732333" weight="0.32875264" />
-      <window_info active="true" anchor="bottom" id="Run" order="3" sideWeight="0.50267667" side_tool="true" visible="true" weight="0.3187773" />
+      <window_info anchor="bottom" id="Run" order="3" sideWeight="0.514742" side_tool="true" visible="true" weight="0.30786026" />
       <window_info anchor="bottom" id="Debug" order="4" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="5" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="6" weight="0.4" />
@@ -496,7 +481,7 @@
       <window_info anchor="bottom" id="Version Control" order="9" sideWeight="0.49893504" weight="0.32970297" />
       <window_info anchor="bottom" id="Database Changes" order="10" />
       <window_info anchor="bottom" id="TypeScript" order="11" sideWeight="0.4987715" weight="0.32969433" />
-      <window_info anchor="bottom" id="Terminal" order="12" sideWeight="0.48608136" weight="0.30866808" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="12" sideWeight="0.48525798" visible="true" weight="0.30786026" />
       <window_info anchor="bottom" id="npm" order="13" sideWeight="0.62044966" side_tool="true" weight="0.389738" />
       <window_info anchor="bottom" id="Event Log" order="14" side_tool="true" />
       <window_info anchor="bottom" id="Coverage" order="15" sideWeight="0.38764644" weight="0.46359447" />
@@ -771,13 +756,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Config.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="312">
-          <caret line="50" column="41" selection-start-line="50" selection-start-column="41" selection-end-line="50" selection-end-column="41" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Views/IRenderer.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="24">
@@ -822,17 +800,24 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/Config.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="336">
+          <caret line="51" column="4" selection-start-line="51" selection-start-column="4" selection-end-line="51" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/configs/custom.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="5" column="10" selection-start-line="5" selection-start-column="10" selection-end-line="5" selection-end-column="10" />
+        <state relative-caret-position="264">
+          <caret line="11" column="24" selection-start-line="11" selection-start-column="24" selection-end-line="11" selection-end-column="24" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/index.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="291">
-          <caret line="55" column="24" selection-start-line="55" selection-start-column="24" selection-end-line="55" selection-end-column="24" />
+        <state relative-caret-position="135">
+          <caret line="31" column="51" selection-start-line="31" selection-start-column="51" selection-end-line="31" selection-end-column="51" />
           <folding>
             <element signature="e#0#57#0" expanded="true" />
           </folding>
@@ -841,8 +826,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Views/TerminalRenderer.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="423">
-          <caret line="34" column="19" selection-start-line="34" selection-start-column="19" selection-end-line="34" selection-end-column="19" />
+        <state relative-caret-position="404">
+          <caret line="31" column="52" selection-start-line="31" selection-start-column="52" selection-end-line="31" selection-end-column="52" />
           <folding>
             <element signature="e#0#36#0" expanded="true" />
           </folding>

@@ -4,18 +4,19 @@ const Config_1 = require("../Config");
 const readline = require("readline");
 const config = Config_1.default.getInstance();
 class TerminalRenderer {
-    async execute() {
+    execute() {
         const timeout = 1000 / config.fps;
-        this._setInterval = setInterval(() => {
-            this.update();
-            if (this._isComplete) {
-                clearInterval(this._setInterval);
-                return this._stepCount;
-            }
-            this.render();
-        }, timeout);
         process.stdin.resume();
-        return this._stepCount;
+        return new Promise(resolve => {
+            this._setInterval = setInterval(() => {
+                this.update();
+                if (this._isComplete) {
+                    clearInterval(this._setInterval);
+                    resolve(this._stepCount);
+                }
+                this.render();
+            }, timeout);
+        });
     }
     update() {
         this._plane.update();

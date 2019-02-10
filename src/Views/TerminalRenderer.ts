@@ -18,24 +18,24 @@ class TerminalRenderer implements IRenderer {
     private _isComplete: boolean;
     private _setInterval: Timeout | null;
 
-    async execute(): Promise<number> {
+    execute(): Promise<number> {
         const timeout = 1000 / config.fps;
-
-        this._setInterval = setInterval(() => {
-            this.update();
-
-            if(this._isComplete) {
-                clearInterval(this._setInterval);
-                return this._stepCount;
-            }
-
-            this.render();
-        }, timeout);
 
         // Keep node alive
         process.stdin.resume();
 
-        return this._stepCount;
+        return new Promise(resolve => {
+            this._setInterval = setInterval(() => {
+                this.update();
+
+                if(this._isComplete) {
+                    clearInterval(this._setInterval);
+                    resolve(this._stepCount)
+                }
+
+                this.render();
+            }, timeout);
+        });
     }
 
     public update() {

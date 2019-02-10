@@ -13,6 +13,6 @@
   "showColumnNumbers": true,
   "showBoardingGroups": true,
   "showLog": true,
-  "animate": false,
+  "animate": true,
   "simulationRuns": 10000
 }

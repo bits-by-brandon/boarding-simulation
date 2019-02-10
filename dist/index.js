@@ -37,9 +37,11 @@ const main = async () => {
     }
     const simResults = await Promise.all(simulations);
     const stepAverage = simResults.reduce((a, b) => a + b, 0) / simResults.length;
-    console.log(`sort used: ${config.sortStrategyName}`);
-    console.log(`simulations ran: ${config.simulationRuns}`);
-    console.log(`average steps: ${stepAverage}`);
+    if (!config.animate) {
+        console.log(`sort used: ${config.sortStrategyName}`);
+        console.log(`simulations ran: ${config.simulationRuns}`);
+        console.log(`average steps: ${stepAverage}`);
+    }
 };
 main();
 //# sourceMappingURL=index.js.map
