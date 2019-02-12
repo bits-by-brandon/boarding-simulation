@@ -8,7 +8,9 @@ class Lane {
         }
     }
     get occupied() {
-        return Object.keys(this._rows).filter(i => this._rows[parseInt(i)] !== null).length;
+        return Object.keys(this._rows)
+            .filter(i => this._rows[parseInt(i)] !== null)
+            .map(key => this._rows[parseInt(key)]);
     }
     get rows() {
         return this._rows;

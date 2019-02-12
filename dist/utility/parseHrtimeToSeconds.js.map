@@ -1,0 +1,1 @@
+{"version":3,"file":"parseHrtimeToSeconds.js","sourceRoot":"","sources":["../../src/utility/parseHrtimeToSeconds.ts"],"names":[],"mappings":";;AAAA,MAAM,oBAAoB,GAAG,CAAC,MAAwB,EAAU,EAAE,CAC9D,CAAC,MAAM,CAAC,CAAC,CAAC,GAAG,CAAC,MAAM,CAAC,CAAC,CAAC,GAAG,GAAG,CAAC,CAAC,CAAC,OAAO,CAAC,CAAC,CAAC,CAAC;AAE/C,kBAAe,oBAAoB,CAAC"}

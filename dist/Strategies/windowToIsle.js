@@ -11,4 +11,4 @@ const WindowToIsle = (passengers) => {
     });
 };
 exports.default = WindowToIsle;
-//# sourceMappingURL=WindowToIsle.js.map
+//# sourceMappingURL=windowToIsle.js.map

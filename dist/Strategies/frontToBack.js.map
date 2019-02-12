@@ -1,0 +1,1 @@
+{"version":3,"file":"frontToBack.js","sourceRoot":"","sources":["../../src/Strategies/frontToBack.ts"],"names":[],"mappings":";;AAGA,MAAM,WAAW,GAAmB,CAAC,UAAuB,EAAe,EAAE;IACzE,OAAO,UAAU,CAAC,IAAI,CAAC,CAAC,CAAC,EAAE,CAAC,EAAE,EAAE,CAC5B,CAAC,CAAC,YAAY,CAAC,aAAa,GAAG,CAAC,CAAC,YAAY,CAAC,aAAa,CAC9D,CAAC;AACN,CAAC,CAAC;AAEF,kBAAe,WAAW,CAAC"}

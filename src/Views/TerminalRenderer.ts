@@ -7,6 +7,7 @@ import Config from "../Config";
 import Passenger from "../Models/Passenger";
 import readline = require("readline");
 import Timeout = NodeJS.Timeout;
+import ISimulationResults from "./ISimulationResults";
 
 const config = Config.getInstance();
 
@@ -17,8 +18,10 @@ class TerminalRenderer implements IRenderer {
     private _cursorPos: { x: number, y: number };
     private _isComplete: boolean;
     private _setInterval: Timeout | null;
+    private _concurrentStowMax: number;
+    private _concurrentStows: number;
 
-    execute(): Promise<number> {
+    execute(): Promise<ISimulationResults> {
         const timeout = 1000 / config.fps;
 
         // Keep node alive
@@ -30,7 +33,10 @@ class TerminalRenderer implements IRenderer {
 
                 if(this._isComplete) {
                     clearInterval(this._setInterval);
-                    resolve(this._stepCount)
+                    resolve({
+                        totalSteps: this._stepCount,
+                        concurrentStowMax: this._concurrentStowMax
+                    })
                 }
 
                 this.render();
@@ -71,13 +77,17 @@ class TerminalRenderer implements IRenderer {
             frame += column + '\n';
         }
 
+        this._concurrentStowMax = Math.max(this._concurrentStows, this._concurrentStowMax);
+
         frame += '\n';
 
         frame += this.renderStats();
 
+        this._concurrentStows = 0;
+
         frame += this.renderQueue(this._plane.queue);
 
-        if (this._plane.queue.length === 0 && this._plane.lane.occupied === 0) {
+        if (this._plane.queue.length === 0 && this._plane.lane.occupied.length === 0) {
             frame += `\nFinished boarding in ${this._stepCount} steps`;
             this._isComplete = true;
         } else {
@@ -95,6 +105,8 @@ class TerminalRenderer implements IRenderer {
         this._cursorPos = {x: 0, y: 0};
         this._isComplete = false;
         this._setInterval = null;
+        this._concurrentStowMax = 0;
+        this._concurrentStows = 0;
 
         if(config.animate) {
             process.on('exit', () => {
@@ -187,8 +199,9 @@ class TerminalRenderer implements IRenderer {
         }
         output += `steps: ${this._stepCount}`;
         output += `\t`;
-        output += `x: ${this._cursorPos.x}, y: ${this._cursorPos.y}`;
-        output += '\n';
+        output += `concurrent stows: ${this._concurrentStows}`;
+        output += '\t';
+        output += `max concurrent stows: ${this._concurrentStowMax}`;
         return output;
     }
 
@@ -197,6 +210,7 @@ class TerminalRenderer implements IRenderer {
 
         switch (passenger.status) {
             case 'stowing':
+                this._concurrentStows++;
                 return ' ' + passenger.baggageCount.toString() + direction + ' ';
             case 'shuffling':
                 return ` X${direction} `;

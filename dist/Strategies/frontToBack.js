@@ -4,4 +4,4 @@ const frontToBack = (passengers) => {
     return passengers.sort((a, b) => a.assignedSeat.boardingGroup - b.assignedSeat.boardingGroup);
 };
 exports.default = frontToBack;
-//# sourceMappingURL=FrontToBack.js.map
+//# sourceMappingURL=frontToBack.js.map

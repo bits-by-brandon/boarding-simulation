@@ -4,7 +4,7 @@
   "columnsPerSide": 3,
   "boardingGroups": 5,
   "fps": 20,
-  "stepsPerBag": 2,
+  "stepsPerBag": 7,
   "bagMin": 1,
   "bagMax": 1,
   "seatShufflePenalty": 5,
@@ -13,6 +13,6 @@
   "showColumnNumbers": true,
   "showBoardingGroups": true,
   "showLog": true,
-  "animate": true,
+  "animate": false,
   "simulationRuns": 10000
 }

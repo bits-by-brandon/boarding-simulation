@@ -12,7 +12,10 @@ class TerminalRenderer {
                 this.update();
                 if (this._isComplete) {
                     clearInterval(this._setInterval);
-                    resolve(this._stepCount);
+                    resolve({
+                        totalSteps: this._stepCount,
+                        concurrentStowMax: this._concurrentStowMax
+                    });
                 }
                 this.render();
             }, timeout);
@@ -40,10 +43,12 @@ class TerminalRenderer {
             }
             frame += column + '\n';
         }
+        this._concurrentStowMax = Math.max(this._concurrentStows, this._concurrentStowMax);
         frame += '\n';
         frame += this.renderStats();
+        this._concurrentStows = 0;
         frame += this.renderQueue(this._plane.queue);
-        if (this._plane.queue.length === 0 && this._plane.lane.occupied === 0) {
+        if (this._plane.queue.length === 0 && this._plane.lane.occupied.length === 0) {
             frame += `\nFinished boarding in ${this._stepCount} steps`;
             this._isComplete = true;
         }
@@ -60,6 +65,8 @@ class TerminalRenderer {
         this._cursorPos = { x: 0, y: 0 };
         this._isComplete = false;
         this._setInterval = null;
+        this._concurrentStowMax = 0;
+        this._concurrentStows = 0;
         if (config.animate) {
             process.on('exit', () => {
                 readline.moveCursor(process.stdout, 0, 0);
@@ -134,14 +141,16 @@ class TerminalRenderer {
         }
         output += `steps: ${this._stepCount}`;
         output += `\t`;
-        output += `x: ${this._cursorPos.x}, y: ${this._cursorPos.y}`;
-        output += '\n';
+        output += `concurrent stows: ${this._concurrentStows}`;
+        output += '\t';
+        output += `max concurrent stows: ${this._concurrentStowMax}`;
         return output;
     }
     renderPassenger(passenger) {
         const direction = this._plane.getSeatSide(passenger.assignedSeat) === 'left' ? '↑' : '↓';
         switch (passenger.status) {
             case 'stowing':
+                this._concurrentStows++;
                 return ' ' + passenger.baggageCount.toString() + direction + ' ';
             case 'shuffling':
                 return ` X${direction} `;

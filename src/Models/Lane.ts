@@ -12,8 +12,10 @@ class Lane {
         }
     }
 
-    get occupied(): number {
-        return Object.keys(this._rows).filter(i => this._rows[parseInt(i)] !== null).length;
+    get occupied(): Passenger[] {
+        return Object.keys(this._rows)
+            .filter(i => this._rows[parseInt(i)] !== null)
+            .map(key => this._rows[parseInt(key)]);
     }
 
     get rows(): { [key: number]: Passenger | null } {

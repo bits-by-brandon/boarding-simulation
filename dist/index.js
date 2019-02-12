@@ -36,11 +36,13 @@ const main = async () => {
         simulations.push(runSimulation());
     }
     const simResults = await Promise.all(simulations);
-    const stepAverage = simResults.reduce((a, b) => a + b, 0) / simResults.length;
+    const stepAverage = simResults.reduce((a, b) => a + b.totalSteps, 0) / simResults.length;
+    const maxStows = simResults.reduce((a, b) => Math.max(a, b.concurrentStowMax), 0);
     if (!config.animate) {
         console.log(`sort used: ${config.sortStrategyName}`);
         console.log(`simulations ran: ${config.simulationRuns}`);
         console.log(`average steps: ${stepAverage}`);
+        console.log(`maximum concurrent stows: ${maxStows}`);
     }
 };
 main();
