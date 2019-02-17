@@ -1,9 +1,10 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 const fs = require("fs");
+const path = require("path");
 class Config {
     constructor(configPath) {
-        const defaultConfigPath = __dirname + '/../default.json';
+        const defaultConfigPath = path.resolve(__dirname, '../default.json');
         let configJson;
         try {
             const configString = fs.readFileSync(configPath);
@@ -11,7 +12,8 @@ class Config {
         }
         catch (e) {
             console.log('Could not provided config file. Using default');
-            configJson = JSON.parse(defaultConfigPath);
+            const configString = fs.readFileSync(defaultConfigPath);
+            configJson = JSON.parse(configString.toString());
         }
         this.passengerCount = configJson['passengerCount'];
         this.rows = configJson['rows'];

@@ -1,4 +1,5 @@
 import fs = require('fs');
+import * as path from "path";
 
 class Config {
     private static instance: Config;
@@ -21,7 +22,7 @@ class Config {
     readonly simulationRuns: number;
 
     constructor(configPath: string) {
-        const defaultConfigPath = __dirname + '/../default.json';
+        const defaultConfigPath = path.resolve(__dirname, '../default.json');
 
         let configJson;
 
@@ -30,7 +31,8 @@ class Config {
             configJson = JSON.parse(configString.toString());
         } catch (e) {
             console.log('Could not provided config file. Using default');
-            configJson = JSON.parse(defaultConfigPath);
+            const configString = fs.readFileSync(defaultConfigPath);
+            configJson = JSON.parse(configString.toString());
         }
 
         this.passengerCount = configJson['passengerCount'];

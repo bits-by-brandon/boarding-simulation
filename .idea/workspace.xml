@@ -1,14 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="2c7a8e10-d95a-41ad-b462-4f72556de8f1" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/configs/custom.json" beforeDir="false" afterPath="$PROJECT_DIR$/configs/custom.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/Strategies/fastest.js" beforeDir="false" afterPath="$PROJECT_DIR$/dist/Strategies/fastest.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/Strategies/fastest.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/dist/Strategies/fastest.js.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Strategies/fastest.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/Strategies/fastest.ts" afterDir="false" />
-    </list>
+    <list default="true" id="2c7a8e10-d95a-41ad-b462-4f72556de8f1" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -31,7 +24,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/index.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="414">
+            <state relative-caret-position="-7">
               <caret line="34" column="27" selection-start-line="34" selection-start-column="27" selection-end-line="34" selection-end-column="27" />
               <folding>
                 <element signature="e#0#57#0" expanded="true" />
@@ -40,10 +33,10 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/configs/custom.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="243">
+            <state relative-caret-position="-16">
               <caret line="9" column="25" selection-start-line="9" selection-start-column="25" selection-end-line="9" selection-end-column="25" />
             </state>
           </provider>
@@ -52,7 +45,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Models/Passenger.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="313">
+            <state relative-caret-position="-7">
               <caret line="69" column="109" selection-start-line="69" selection-start-column="109" selection-end-line="69" selection-end-column="109" />
               <folding>
                 <element signature="e#0#28#0" expanded="true" />
@@ -64,8 +57,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Views/TerminalRenderer.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret line="211" column="18" selection-start-line="211" selection-start-column="18" selection-end-line="211" selection-end-column="18" />
+            <state relative-caret-position="-7">
+              <caret line="116" selection-start-line="116" selection-end-line="116" />
               <folding>
                 <element signature="e#0#36#0" expanded="true" />
               </folding>
@@ -115,7 +108,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Strategies/fastest.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="189">
+            <state relative-caret-position="-7">
               <caret line="7" column="59" selection-start-line="7" selection-start-column="59" selection-end-line="7" selection-end-column="59" />
               <folding>
                 <element signature="e#0#54#0" expanded="true" />
@@ -124,10 +117,10 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Config.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state>
+            <state relative-caret-position="246">
               <caret line="14" column="34" selection-start-line="14" selection-start-column="34" selection-end-line="14" selection-end-column="34" />
             </state>
           </provider>
@@ -382,8 +375,8 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="npm.build" />
         <item itemvalue="npm.build:watch" />
+        <item itemvalue="npm.build" />
         <item itemvalue="Jest.creates a default passenger" />
         <item itemvalue="Jest.initializes a seat" />
         <item itemvalue="Jest.returns the correct seat label" />
@@ -404,7 +397,7 @@
       <workItem from="1549407602765" duration="5230000" />
       <workItem from="1549548102612" duration="39107000" />
       <workItem from="1549744862425" duration="26961000" />
-      <workItem from="1550266223686" duration="4990000" />
+      <workItem from="1550266223686" duration="5607000" />
     </task>
     <servers />
   </component>
@@ -441,7 +434,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="106054000" />
+    <option name="totallyTimeSpent" value="106671000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -454,16 +447,15 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="877" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.497151" visible="true" weight="0.15593705" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.497151" visible="true" weight="0.15593705" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Gulp" order="2" side_tool="true" />
       <window_info id="Favorites" order="3" side_tool="true" />
       <window_info anchor="bottom" id="Quokka" order="0" />
       <window_info anchor="bottom" id="Message" order="1" />
       <window_info anchor="bottom" id="Find" order="2" sideWeight="0.49732333" weight="0.32875264" />
-      <window_info anchor="bottom" id="Run" order="3" sideWeight="0.514742" side_tool="true" weight="0.37834394" />
+      <window_info anchor="bottom" id="Run" order="3" sideWeight="0.51573676" side_tool="true" weight="0.3057325" />
       <window_info anchor="bottom" id="Debug" order="4" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="5" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="6" weight="0.4" />
@@ -472,8 +464,8 @@
       <window_info anchor="bottom" id="Version Control" order="9" sideWeight="0.49893504" weight="0.32970297" />
       <window_info anchor="bottom" id="Database Changes" order="10" />
       <window_info anchor="bottom" id="TypeScript" order="11" sideWeight="0.4987715" weight="0.32969433" />
-      <window_info anchor="bottom" id="Terminal" order="12" sideWeight="0.48525798" weight="0.30700636" />
-      <window_info anchor="bottom" id="npm" order="13" sideWeight="0.62044966" side_tool="true" weight="0.3896373" />
+      <window_info anchor="bottom" id="Terminal" order="12" sideWeight="0.48426324" weight="0.3057325" />
+      <window_info anchor="bottom" id="npm" order="13" sideWeight="0.62044966" side_tool="true" weight="0.38853502" />
       <window_info anchor="bottom" id="Event Log" order="14" side_tool="true" />
       <window_info anchor="bottom" id="Coverage" order="15" sideWeight="0.38764644" weight="0.46359447" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -753,16 +745,6 @@
         <state relative-caret-position="-65" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Views/TerminalRenderer.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret line="211" column="18" selection-start-line="211" selection-start-column="18" selection-end-line="211" selection-end-column="18" />
-          <folding>
-            <element signature="e#0#36#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Views/ISimulationResults.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state>
@@ -794,16 +776,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Config.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret line="14" column="34" selection-start-line="14" selection-start-column="34" selection-end-line="14" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Models/Passenger.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="313">
+        <state relative-caret-position="-7">
           <caret line="69" column="109" selection-start-line="69" selection-start-column="109" selection-end-line="69" selection-end-column="109" />
           <folding>
             <element signature="e#0#28#0" expanded="true" />
@@ -813,7 +788,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/index.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="414">
+        <state relative-caret-position="-7">
           <caret line="34" column="27" selection-start-line="34" selection-start-column="27" selection-end-line="34" selection-end-column="27" />
           <folding>
             <element signature="e#0#57#0" expanded="true" />
@@ -823,7 +798,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Strategies/fastest.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="189">
+        <state relative-caret-position="-7">
           <caret line="7" column="59" selection-start-line="7" selection-start-column="59" selection-end-line="7" selection-end-column="59" />
           <folding>
             <element signature="e#0#54#0" expanded="true" />
@@ -833,8 +808,25 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/configs/custom.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="243">
+        <state relative-caret-position="-16">
           <caret line="9" column="25" selection-start-line="9" selection-start-column="25" selection-end-line="9" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Views/TerminalRenderer.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-7">
+          <caret line="116" selection-start-line="116" selection-end-line="116" />
+          <folding>
+            <element signature="e#0#36#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Config.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="246">
+          <caret line="14" column="34" selection-start-line="14" selection-start-column="34" selection-end-line="14" selection-end-column="34" />
         </state>
       </provider>
     </entry>
