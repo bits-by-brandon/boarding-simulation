@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="2c7a8e10-d95a-41ad-b462-4f72556de8f1" name="Default Changelist" comment="" />
+    <list default="true" id="2c7a8e10-d95a-41ad-b462-4f72556de8f1" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -36,8 +38,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/configs/custom.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-16">
-              <caret line="9" column="25" selection-start-line="9" selection-start-column="25" selection-end-line="9" selection-end-column="25" />
+            <state relative-caret-position="282">
+              <caret line="15" selection-start-line="15" selection-end-line="15" />
             </state>
           </provider>
         </entry>
@@ -59,27 +61,6 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="-7">
               <caret line="116" selection-start-line="116" selection-end-line="116" />
-              <folding>
-                <element signature="e#0#36#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Views/ISimulationResults.ts">
-          <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret line="3" selection-start-line="3" selection-end-line="3" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Views/QuickRender.ts">
-          <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret line="12" column="22" selection-start-line="12" selection-start-column="22" selection-end-line="12" selection-end-column="22" />
               <folding>
                 <element signature="e#0#36#0" expanded="true" />
               </folding>
@@ -117,11 +98,35 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Config.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="246">
-              <caret line="14" column="34" selection-start-line="14" selection-start-column="34" selection-end-line="14" selection-end-column="34" />
+            <state relative-caret-position="373">
+              <caret line="34" column="58" selection-start-line="34" selection-start-column="58" selection-end-line="34" selection-end-column="58" />
+              <folding>
+                <element signature="n#fs#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/README.md">
+          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+            <state split_layout="SPLIT">
+              <first_editor relative-caret-position="84">
+                <caret line="4" column="46" selection-start-line="4" selection-start-column="46" selection-end-line="4" selection-end-column="46" />
+              </first_editor>
+              <second_editor />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/default.json">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="231">
+              <caret line="11" column="24" selection-start-line="11" selection-start-column="24" selection-end-line="11" selection-end-column="24" />
             </state>
           </provider>
         </entry>
@@ -154,7 +159,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/index.js" />
         <option value="$PROJECT_DIR$/src/Models/Passenger.js" />
         <option value="$PROJECT_DIR$/src/Models/PassengerFactory.js" />
         <option value="$PROJECT_DIR$/tsconfig.json" />
@@ -177,7 +181,6 @@
         <option value="$PROJECT_DIR$/src/Models/Seat.ts" />
         <option value="$PROJECT_DIR$/src/Models/Seat.test.ts" />
         <option value="$PROJECT_DIR$/src/Models/Plane.ts" />
-        <option value="$PROJECT_DIR$/default.json" />
         <option value="$PROJECT_DIR$/frontToBack.json" />
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/src/Models/PassengerFactory.ts" />
@@ -195,7 +198,6 @@
         <option value="$PROJECT_DIR$/src/Strategies/strategyHelper.ts" />
         <option value="$PROJECT_DIR$/src/Strategies/alternatingRows.js" />
         <option value="$PROJECT_DIR$/src/Strategies/alternatingRows.ts" />
-        <option value="$PROJECT_DIR$/src/Config.ts" />
         <option value="$PROJECT_DIR$/src/Views/IRenderer.ts" />
         <option value="$PROJECT_DIR$/src/Views/TerminalRenderer.ts" />
         <option value="$PROJECT_DIR$/src/Models/Lane.ts" />
@@ -205,6 +207,9 @@
         <option value="$PROJECT_DIR$/src/index.ts" />
         <option value="$PROJECT_DIR$/src/Strategies/fastest.ts" />
         <option value="$PROJECT_DIR$/configs/custom.json" />
+        <option value="$PROJECT_DIR$/default.json" />
+        <option value="$PROJECT_DIR$/src/Config.ts" />
+        <option value="$PROJECT_DIR$/README.md" />
       </list>
     </option>
   </component>
@@ -397,7 +402,7 @@
       <workItem from="1549407602765" duration="5230000" />
       <workItem from="1549548102612" duration="39107000" />
       <workItem from="1549744862425" duration="26961000" />
-      <workItem from="1550266223686" duration="5607000" />
+      <workItem from="1550266223686" duration="5969000" />
     </task>
     <servers />
   </component>
@@ -434,7 +439,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="106671000" />
+    <option name="totallyTimeSpent" value="107033000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -447,15 +452,16 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="877" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.497151" visible="true" weight="0.15593705" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.497151" weight="0.15593705" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Gulp" order="2" side_tool="true" />
       <window_info id="Favorites" order="3" side_tool="true" />
       <window_info anchor="bottom" id="Quokka" order="0" />
       <window_info anchor="bottom" id="Message" order="1" />
       <window_info anchor="bottom" id="Find" order="2" sideWeight="0.49732333" weight="0.32875264" />
-      <window_info anchor="bottom" id="Run" order="3" sideWeight="0.51573676" side_tool="true" weight="0.3057325" />
+      <window_info anchor="bottom" id="Run" order="3" sideWeight="0.5164521" side_tool="true" visible="true" weight="0.3057325" />
       <window_info anchor="bottom" id="Debug" order="4" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="5" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="6" weight="0.4" />
@@ -464,7 +470,7 @@
       <window_info anchor="bottom" id="Version Control" order="9" sideWeight="0.49893504" weight="0.32970297" />
       <window_info anchor="bottom" id="Database Changes" order="10" />
       <window_info anchor="bottom" id="TypeScript" order="11" sideWeight="0.4987715" weight="0.32969433" />
-      <window_info anchor="bottom" id="Terminal" order="12" sideWeight="0.48426324" weight="0.3057325" />
+      <window_info anchor="bottom" id="Terminal" order="12" sideWeight="0.48354793" visible="true" weight="0.3057325" />
       <window_info anchor="bottom" id="npm" order="13" sideWeight="0.62044966" side_tool="true" weight="0.38853502" />
       <window_info anchor="bottom" id="Event Log" order="14" side_tool="true" />
       <window_info anchor="bottom" id="Coverage" order="15" sideWeight="0.38764644" weight="0.46359447" />
@@ -566,13 +572,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="357">
           <caret line="30" column="4" selection-start-line="30" selection-start-column="4" selection-end-line="30" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/default.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="10" column="33" selection-start-line="10" selection-start-column="33" selection-end-line="10" selection-end-column="33" />
         </state>
       </provider>
     </entry>
@@ -806,13 +805,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/configs/custom.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-16">
-          <caret line="9" column="25" selection-start-line="9" selection-start-column="25" selection-end-line="9" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Views/TerminalRenderer.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-7">
@@ -823,10 +815,37 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/default.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="231">
+          <caret line="11" column="24" selection-start-line="11" selection-start-column="24" selection-end-line="11" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/configs/custom.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="282">
+          <caret line="15" selection-start-line="15" selection-end-line="15" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/Config.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="246">
-          <caret line="14" column="34" selection-start-line="14" selection-start-column="34" selection-end-line="14" selection-end-column="34" />
+        <state relative-caret-position="373">
+          <caret line="34" column="58" selection-start-line="34" selection-start-column="58" selection-end-line="34" selection-end-column="58" />
+          <folding>
+            <element signature="n#fs#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="84">
+            <caret line="4" column="46" selection-start-line="4" selection-start-column="46" selection-end-line="4" selection-end-column="46" />
+          </first_editor>
+          <second_editor />
         </state>
       </provider>
     </entry>
