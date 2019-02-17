@@ -1,6 +1,6 @@
 {
-  "passengerCount": 72,
-  "rows": 12,
+  "passengerCount": 120,
+  "rows": 20,
   "columnsPerSide": 3,
   "boardingGroups": 5,
   "fps": 20,
@@ -13,6 +13,6 @@
   "showColumnNumbers": true,
   "showBoardingGroups": true,
   "showLog": true,
-  "animate": false,
+  "animate": true,
   "simulationRuns": 10000
 }
